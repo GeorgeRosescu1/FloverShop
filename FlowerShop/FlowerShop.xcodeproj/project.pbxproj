@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F0FAD3852997908B006B05F9 /* FlowerShopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3842997908B006B05F9 /* FlowerShopApp.swift */; };
-		F0FAD3872997908B006B05F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3862997908B006B05F9 /* ContentView.swift */; };
+		F0FAD3872997908B006B05F9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3862997908B006B05F9 /* HomeView.swift */; };
 		F0FAD3892997908D006B05F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0FAD3882997908D006B05F9 /* Assets.xcassets */; };
 		F0FAD38C2997908D006B05F9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0FAD38B2997908D006B05F9 /* Preview Assets.xcassets */; };
 		F0FAD39429979427006B05F9 /* Color+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD39329979427006B05F9 /* Color+Utils.swift */; };
@@ -16,12 +16,16 @@
 		F0FAD39929979630006B05F9 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0FAD3982997962F006B05F9 /* Poppins-SemiBold.ttf */; };
 		F0FAD39B29979648006B05F9 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0FAD39A29979648006B05F9 /* Poppins-Regular.ttf */; };
 		F0FAD39F29979EE8006B05F9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD39E29979EE8006B05F9 /* Constants.swift */; };
+		F0FAD3A42997A037006B05F9 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3A32997A037006B05F9 /* Order.swift */; };
+		F0FAD3A72997A234006B05F9 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3A62997A234006B05F9 /* OrderCell.swift */; };
+		F0FAD3AA2997A340006B05F9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3A92997A340006B05F9 /* HomeViewModel.swift */; };
+		F0FAD3AD2997A359006B05F9 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3AC2997A359006B05F9 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F0FAD3812997908B006B05F9 /* FlowerShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowerShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0FAD3842997908B006B05F9 /* FlowerShopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerShopApp.swift; sourceTree = "<group>"; };
-		F0FAD3862997908B006B05F9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F0FAD3862997908B006B05F9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F0FAD3882997908D006B05F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0FAD38B2997908D006B05F9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F0FAD39329979427006B05F9 /* Color+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Utils.swift"; sourceTree = "<group>"; };
@@ -30,6 +34,10 @@
 		F0FAD39A29979648006B05F9 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		F0FAD39C299796C9006B05F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F0FAD39E29979EE8006B05F9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F0FAD3A32997A037006B05F9 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		F0FAD3A62997A234006B05F9 /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
+		F0FAD3A92997A340006B05F9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F0FAD3AC2997A359006B05F9 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +72,9 @@
 			children = (
 				F0FAD39C299796C9006B05F9 /* Info.plist */,
 				F0FAD3842997908B006B05F9 /* FlowerShopApp.swift */,
-				F0FAD3862997908B006B05F9 /* ContentView.swift */,
+				F0FAD3AB2997A34D006B05F9 /* Common Logic */,
+				F0FAD3A029979FC0006B05F9 /* Screens */,
+				F0FAD3A22997A02C006B05F9 /* Models */,
 				F0FAD39529979606006B05F9 /* Resource */,
 				F0FAD3922997937F006B05F9 /* Utils */,
 				F0FAD3882997908D006B05F9 /* Assets.xcassets */,
@@ -106,6 +116,48 @@
 				F0FAD39329979427006B05F9 /* Color+Utils.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F0FAD3A029979FC0006B05F9 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				F0FAD3A129979FD7006B05F9 /* Home */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		F0FAD3A129979FD7006B05F9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F0FAD3A52997A223006B05F9 /* UI Components */,
+				F0FAD3862997908B006B05F9 /* HomeView.swift */,
+				F0FAD3A92997A340006B05F9 /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F0FAD3A22997A02C006B05F9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F0FAD3A32997A037006B05F9 /* Order.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F0FAD3A52997A223006B05F9 /* UI Components */ = {
+			isa = PBXGroup;
+			children = (
+				F0FAD3A62997A234006B05F9 /* OrderCell.swift */,
+			);
+			path = "UI Components";
+			sourceTree = "<group>";
+		};
+		F0FAD3AB2997A34D006B05F9 /* Common Logic */ = {
+			isa = PBXGroup;
+			children = (
+				F0FAD3AC2997A359006B05F9 /* ViewModel.swift */,
+			);
+			path = "Common Logic";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,9 +233,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0FAD3872997908B006B05F9 /* ContentView.swift in Sources */,
+				F0FAD3872997908B006B05F9 /* HomeView.swift in Sources */,
 				F0FAD3852997908B006B05F9 /* FlowerShopApp.swift in Sources */,
+				F0FAD3AA2997A340006B05F9 /* HomeViewModel.swift in Sources */,
+				F0FAD3A42997A037006B05F9 /* Order.swift in Sources */,
 				F0FAD39429979427006B05F9 /* Color+Utils.swift in Sources */,
+				F0FAD3A72997A234006B05F9 /* OrderCell.swift in Sources */,
+				F0FAD3AD2997A359006B05F9 /* ViewModel.swift in Sources */,
 				F0FAD39F29979EE8006B05F9 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

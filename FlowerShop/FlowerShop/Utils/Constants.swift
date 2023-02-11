@@ -18,4 +18,6 @@ struct Constants {
         static let smallBody: CGFloat = 18
         static let title: CGFloat = 28
     }
+
+    static let defaultPadding: CGFloat = 20
 }
