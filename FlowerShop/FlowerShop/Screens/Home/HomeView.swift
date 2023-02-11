@@ -15,7 +15,7 @@ struct HomeView: View {
             Color.wolfWhite
                 .ignoresSafeArea()
             VStack {
-                ScrollView {
+                ScrollView(showsIndicators: false) {
                     HStack {
                         Text("Comenzi")
                             .font(.custom(Constants.Fonts.bold, size: Constants.Fonts.title))

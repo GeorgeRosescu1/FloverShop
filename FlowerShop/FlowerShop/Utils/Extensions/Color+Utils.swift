@@ -24,5 +24,19 @@ extension Color {
     static var wolfBlue: Color {
         Color("WolfBlue")
     }
-}
 
+    static var wolfYellow: Color {
+        Color("WolfYellow")
+    }
+
+    static func colorForStatus(_ status: Order.Status) -> Color {
+        switch status {
+        case .delivered:
+            return .wolfGreen
+        case .pending:
+            return .wolfYellow
+        case .new:
+            return .wolfBlue
+        }
+    }
+}

@@ -20,5 +20,16 @@ extension Order {
         case delivered
         case pending
         case new
+
+        var description: String {
+            switch self {
+            case .delivered:
+                return "Order delivered"
+            case .pending:
+                return "Order pending"
+            case .new:
+                return "New order"
+            }
+        }
     }
 }

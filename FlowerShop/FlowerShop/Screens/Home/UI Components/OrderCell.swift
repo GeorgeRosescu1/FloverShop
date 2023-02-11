@@ -6,24 +6,49 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct OrderCell: View {
     let order: Order
 
     var body: some View {
-        HStack {
-            Text(order.description)
-            Spacer()
-            
-        }
-        .background {
+        ZStack {
             Color.white
+            HStack {
+                VStack(alignment: .leading) {
+                    Text(order.description)
+                        .font(.custom(Constants.Fonts.bold,
+                                      size: Constants.Fonts.body))
+
+                        .padding(.top, Constants.defaultPadding)
+                    Text(order.status.description)
+                        .font(.custom(Constants.Fonts.semiBold,
+                                      size: Constants.Fonts.caption))
+                        .foregroundColor(Color.colorForStatus(order.status))
+                    Spacer()
+                }
+                .padding(.horizontal, Constants.smallPadding)
+                Spacer()
+                KFImage(URL(string: order.imageURL))
+                    .resizable()
+                    .scaledToFit()
+                    .cornerRadius(Constants.defaultCornerRadius)
+                    .padding(.horizontal, Constants.smallPadding)
+                    .padding(.vertical, Constants.extraSmallPadding)
+            }
         }
+        .frame(height: 150)
+        .cornerRadius(Constants.defaultCornerRadius)
     }
 }
 
+// MARK: - Preview
 struct OrderCell_Previews: PreviewProvider {
     static var previews: some View {
-        OrderCell(order: Order(id: 1, description: "floarea soarelui", price: 60, imageURL: "", status: .pending))
+        OrderCell(order: Order(id: 1,
+                               description: "floarea soarelui",
+                               price: 60,
+                               imageURL: "https://firebasestorage.googleapis.com/v0/b/bookml.appspot.com/o/flower1.jpg?alt=media&token=8b196de2-1b97-4989-82e6-89b68bca7845",
+                               status: .pending))
     }
 }
