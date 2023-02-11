@@ -9,6 +9,7 @@ import Foundation
 
 protocol HomeDataStore {
     func fetchOrders() async throws -> [Order]
+    func fetchCustomers() async throws -> [Customer]
 }
 
 struct HomeDataStoreImpl: HomeDataStore {
@@ -18,5 +19,12 @@ struct HomeDataStoreImpl: HomeDataStore {
                                                                  httpMethod: .get)
 
         return orderDTOs.compactMap { OrderMapper.map(from: $0) }
+    }
+
+    func fetchCustomers() async throws -> [Customer] {
+        let customerDTOs: [CustomerDTO] = try await ApiService.request("customers",
+                                                                       httpMethod: .get)
+
+        return customerDTOs.compactMap { CustomerMapper.map(from: $0) }
     }
 }

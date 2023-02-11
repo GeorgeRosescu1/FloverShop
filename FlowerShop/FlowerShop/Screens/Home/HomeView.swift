@@ -22,7 +22,7 @@ struct HomeView: View {
                                 .font(.custom(Constants.Fonts.bold, size: Constants.Fonts.title))
                             Spacer()
                             NavigationLink {
-                                OurCustomersView()
+                                OurCustomersView(customers: viewModel.state.customers)
                             } label: {
 
                                 Image(systemName: "person.2")
@@ -47,7 +47,9 @@ struct HomeView: View {
                 }
             }
             .onAppear {
-                viewModel.intent(.load)
+                if viewModel.state.orders.isEmpty || viewModel.state.orders.areAllDelivered {
+                    viewModel.intent(.load)
+                }
             }
         }
     }

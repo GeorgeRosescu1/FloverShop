@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CustomerCell: View {
-    let customer: CustomerDTO
+    let customer: Customer
 
     var body: some View {
         ZStack {
@@ -24,6 +24,6 @@ struct CustomerCell: View {
 
 struct CustomerCell_Previews: PreviewProvider {
     static var previews: some View {
-        CustomerCell(customer: CustomerDTO(id: 1, name: "Marinel", latitude: 46.7716, longitude: 23.6010))
+        CustomerCell(customer: Customer(id: 1, name: "Marinel", latitude: 46.7716, longitude: 23.6010))
     }
 }

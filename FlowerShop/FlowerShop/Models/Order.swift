@@ -31,5 +31,9 @@ extension Order {
                 return "New order"
             }
         }
+
+        var isDelivered: Bool {
+            self == .delivered
+        }
     }
 }

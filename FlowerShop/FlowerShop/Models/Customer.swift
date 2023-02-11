@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Customer {
+struct Customer: Identifiable {
     let id: Int
     let name: String
     let latitude: Double

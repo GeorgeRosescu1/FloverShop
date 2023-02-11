@@ -32,6 +32,9 @@
 		F0FAD3C92997DA7B006B05F9 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3C82997DA7B006B05F9 /* Customer.swift */; };
 		F0FAD3CB2997DB06006B05F9 /* CustomerDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3CA2997DB06006B05F9 /* CustomerDTO.swift */; };
 		F0FAD3D02997DE8F006B05F9 /* CustomerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3CF2997DE8F006B05F9 /* CustomerCell.swift */; };
+		F0FAD3D22997E1B4006B05F9 /* Array+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3D12997E1B4006B05F9 /* Array+Utils.swift */; };
+		F0FAD3D42997E2C4006B05F9 /* CustomerMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3D32997E2C4006B05F9 /* CustomerMapper.swift */; };
+		F0FAD3D62997E546006B05F9 /* UINavigationController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3D52997E546006B05F9 /* UINavigationController+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +64,9 @@
 		F0FAD3C82997DA7B006B05F9 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		F0FAD3CA2997DB06006B05F9 /* CustomerDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDTO.swift; sourceTree = "<group>"; };
 		F0FAD3CF2997DE8F006B05F9 /* CustomerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerCell.swift; sourceTree = "<group>"; };
+		F0FAD3D12997E1B4006B05F9 /* Array+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Utils.swift"; sourceTree = "<group>"; };
+		F0FAD3D32997E2C4006B05F9 /* CustomerMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerMapper.swift; sourceTree = "<group>"; };
+		F0FAD3D52997E546006B05F9 /* UINavigationController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Utils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				F0FAD39329979427006B05F9 /* Color+Utils.swift */,
+				F0FAD3D12997E1B4006B05F9 /* Array+Utils.swift */,
+				F0FAD3D52997E546006B05F9 /* UINavigationController+Utils.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -229,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				F0FAD3B92997AD15006B05F9 /* OrderMapper.swift */,
+				F0FAD3D32997E2C4006B05F9 /* CustomerMapper.swift */,
 			);
 			path = Mappings;
 			sourceTree = "<group>";
@@ -348,10 +357,12 @@
 			files = (
 				F0FAD3872997908B006B05F9 /* HomeView.swift in Sources */,
 				F0FAD3BA2997AD15006B05F9 /* OrderMapper.swift in Sources */,
+				F0FAD3D42997E2C4006B05F9 /* CustomerMapper.swift in Sources */,
 				F0FAD3852997908B006B05F9 /* FlowerShopApp.swift in Sources */,
 				F0FAD3AA2997A340006B05F9 /* HomeViewModel.swift in Sources */,
 				F0FAD3A42997A037006B05F9 /* Order.swift in Sources */,
 				F0FAD3B82997AC41006B05F9 /* Mapper.swift in Sources */,
+				F0FAD3D62997E546006B05F9 /* UINavigationController+Utils.swift in Sources */,
 				F0FAD39429979427006B05F9 /* Color+Utils.swift in Sources */,
 				F0FAD3BF2997AE05006B05F9 /* HomeErrors.swift in Sources */,
 				F0FAD3B02997A4AC006B05F9 /* ApiService.swift in Sources */,
@@ -365,6 +376,7 @@
 				F0FAD3CB2997DB06006B05F9 /* CustomerDTO.swift in Sources */,
 				F0FAD3C52997D7FA006B05F9 /* OurCustomersView.swift in Sources */,
 				F0FAD39F29979EE8006B05F9 /* Constants.swift in Sources */,
+				F0FAD3D22997E1B4006B05F9 /* Array+Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

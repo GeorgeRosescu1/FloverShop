@@ -11,6 +11,7 @@ struct OurCustomersView: View {
     @Environment(\.dismiss) var dismiss
 
     @StateObject private var viewModel = OurCustomersViewModel()
+    let customers: [Customer]
 
     var body: some View {
         ZStack {
@@ -34,8 +35,8 @@ struct OurCustomersView: View {
                 Spacer()
                 ScrollView(showsIndicators: false) {
                     VStack {
-                        ForEach(viewModel.state.customers, id: \.id) { customer in
-                            Text(customer.name)
+                        ForEach(customers) { customer in
+                            CustomerCell(customer: customer)
                         }
                     }
                 }
@@ -43,15 +44,12 @@ struct OurCustomersView: View {
             .padding(.horizontal, Constants.defaultPadding)
         }
         .toolbar(.hidden, for: .navigationBar)
-        .onAppear {
-            viewModel.intent(.fetchCustomers)
-        }
     }
 }
 
 // MARK: - Preview
 struct OurCustomersView_Previews: PreviewProvider {
     static var previews: some View {
-        OurCustomersView()
+        OurCustomersView(customers: [])
     }
 }

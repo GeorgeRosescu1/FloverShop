@@ -10,6 +10,7 @@ import Foundation
 extension HomeViewModel {
     struct State {
         var orders: [Order]
+        var customers: [Customer]
     }
 
     enum Intent {
@@ -23,7 +24,7 @@ final class HomeViewModel: ViewModel {
     private let dataStore: HomeDataStore
 
     init(dataStore: HomeDataStore) {
-        self.state = State(orders: [])
+        self.state = State(orders: [], customers: [])
         self.dataStore = dataStore
     }
 
@@ -32,6 +33,7 @@ final class HomeViewModel: ViewModel {
         case .load:
             Task {
                 await fetchOrders()
+                await fetchCustomers()
             }
         }
     }
@@ -46,5 +48,16 @@ final class HomeViewModel: ViewModel {
             print(error)
         }
 
+    }
+
+    private func fetchCustomers() async {
+        do {
+            let customers = try await dataStore.fetchCustomers()
+            await MainActor.run {
+                state.customers = customers
+            }
+        } catch {
+            print(error)
+        }
     }
 }
