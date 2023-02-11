@@ -9,7 +9,7 @@ import Foundation
 
 extension HomeViewModel {
     struct State {
-        var orders: [Order]
+        var ordersWithCustomers: [OrderWithCustomer]
         var customers: [Customer]
     }
 
@@ -24,40 +24,60 @@ final class HomeViewModel: ViewModel {
     private let dataStore: HomeDataStore
 
     init(dataStore: HomeDataStore) {
-        self.state = State(orders: [], customers: [])
+        self.state = State(ordersWithCustomers: [], customers: [])
         self.dataStore = dataStore
     }
 
     func intent(_ intent: Intent) {
         switch intent {
         case .load:
-            Task {
-                await fetchOrders()
-                await fetchCustomers()
+            fetchData()
+        }
+    }
+
+    private func fetchData() {
+        Task {
+            async let orders = fetchOrders()
+            async let customers = fetchCustomers()
+
+            let ordersWithCustomers: [OrderWithCustomer] = getOrdersWithCustomers(orders: await orders, customers: await customers)
+            let fetchedCustomers = await customers
+            await MainActor.run {
+                state.ordersWithCustomers = ordersWithCustomers
+                state.customers = fetchedCustomers
             }
         }
     }
 
-    private func fetchOrders() async {
-        do {
-            let orders = try await dataStore.fetchOrders()
-            await MainActor.run {
-                state.orders = orders
+    private func getOrdersWithCustomers(orders: [Order], customers: [Customer]) -> [OrderWithCustomer] {
+        orders.compactMap { order in
+            guard let customer = customers.first(where: { $0.id == order.customerId }) else {
+                // There is no reason to have an order that is for a client that does not exist
+                return nil
             }
-        } catch {
-            print(error)
-        }
 
+            return OrderWithCustomer(id: order.id,
+                                     description: order.description,
+                                     price: order.price,
+                                     customer: customer,
+                                     imageURL: order.imageURL,
+                                     status: order.status)
+        }
     }
 
-    private func fetchCustomers() async {
+    private func fetchOrders() async -> [Order] {
         do {
-            let customers = try await dataStore.fetchCustomers()
-            await MainActor.run {
-                state.customers = customers
-            }
+            return try await dataStore.fetchOrders()
         } catch {
-            print(error)
+            return []
+        }
+    }
+
+    private func fetchCustomers() async -> [Customer] {
+        do {
+            return try await dataStore.fetchCustomers()
+        } catch {
+            return []
         }
     }
 }

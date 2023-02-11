@@ -36,7 +36,7 @@ struct HomeView: View {
                         .padding(.top, Constants.defaultPadding)
 
                         VStack {
-                            ForEach(viewModel.state.orders) { order in
+                            ForEach(viewModel.state.ordersWithCustomers) { order in
                                 OrderCell(order: order)
                                     .padding(.bottom, Constants.smallPadding)
                             }
@@ -47,7 +47,7 @@ struct HomeView: View {
                 }
             }
             .onAppear {
-                if viewModel.state.orders.isEmpty || viewModel.state.orders.areAllDelivered {
+                if viewModel.state.ordersWithCustomers.isEmpty {
                     viewModel.intent(.load)
                 }
             }

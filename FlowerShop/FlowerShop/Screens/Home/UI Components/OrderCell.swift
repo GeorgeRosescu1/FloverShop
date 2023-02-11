@@ -9,7 +9,7 @@ import SwiftUI
 import Kingfisher
 
 struct OrderCell: View {
-    let order: Order
+    let order: OrderWithCustomer
 
     var body: some View {
         ZStack {
@@ -45,9 +45,10 @@ struct OrderCell: View {
 // MARK: - Preview
 struct OrderCell_Previews: PreviewProvider {
     static var previews: some View {
-        OrderCell(order: Order(id: 1,
+        OrderCell(order: OrderWithCustomer(id: 1,
                                description: "floarea soarelui",
                                price: 60,
+                                           customer: Customer(id: 1, name: "Marinel", latitude: 46.23, longitude: 23.61),
                                imageURL: "https://firebasestorage.googleapis.com/v0/b/bookml.appspot.com/o/flower1.jpg?alt=media&token=8b196de2-1b97-4989-82e6-89b68bca7845",
                                status: .pending))
     }

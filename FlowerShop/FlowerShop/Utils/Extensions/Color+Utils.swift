@@ -33,7 +33,7 @@ extension Color {
         Color("WolfBlack")
     }
 
-    static func colorForStatus(_ status: Order.Status) -> Color {
+    static func colorForStatus(_ status: OrderStatus) -> Color {
         switch status {
         case .delivered:
             return .wolfGreen
