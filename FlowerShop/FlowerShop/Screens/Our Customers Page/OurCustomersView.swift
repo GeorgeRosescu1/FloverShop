@@ -21,13 +21,13 @@ struct OurCustomersView: View {
                     Button {
                         dismiss.callAsFunction()
                     } label: {
-                        Image(systemName: "arrow.backward")
-                            .font(.custom(Constants.Fonts.bold, size: Constants.Fonts.body))
+                        Image.back
+                            .font(.custom(Constants.Fonts.bold, size: Constants.Fonts.smallBody))
                             .foregroundColor(.wolfBlack)
                     }
                     Spacer()
                     Text("Our customers")
-                        .font(.custom(Constants.Fonts.bold, size: Constants.Fonts.body))
+                        .font(.custom(Constants.Fonts.bold, size: Constants.Fonts.smallBody))
                         .foregroundColor(.wolfBlack)
                     Spacer()
                 }
@@ -35,7 +35,7 @@ struct OurCustomersView: View {
                 ScrollView(showsIndicators: false) {
                     VStack {
                         ForEach(customers) { customer in
-                            CustomerCell(customer: customer, vendorLocation: viewModel.state.location)
+                            CustomerCell(customer: customer, distanceText: viewModel.state.getDistance(for: customer))
                         }
                     }
                 }

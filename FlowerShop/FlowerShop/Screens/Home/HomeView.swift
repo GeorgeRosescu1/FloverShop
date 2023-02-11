@@ -25,7 +25,7 @@ struct HomeView: View {
                                 OurCustomersView(customers: viewModel.state.customers)
                             } label: {
 
-                                Image(systemName: "person.2")
+                                Image.customers
                                     .foregroundColor(.wolfPink)
                                     .font(.custom(Constants.Fonts.bold, size: Constants.Fonts.body))
                                     .frame(width: 40, height: 40)
@@ -37,8 +37,12 @@ struct HomeView: View {
 
                         VStack {
                             ForEach(viewModel.state.ordersWithCustomers) { order in
-                                OrderCell(order: order)
-                                    .padding(.bottom, Constants.smallPadding)
+                                NavigationLink {
+                                    OrderDetails(order: order)
+                                } label: {
+                                    OrderCell(order: order)
+                                }
+                                .padding(.bottom, Constants.smallPadding)
                             }
                         }
                         .padding(.top, Constants.defaultPadding)
@@ -55,6 +59,7 @@ struct HomeView: View {
     }
 }
 
+// MARK: - Preview
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()

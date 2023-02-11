@@ -11,8 +11,19 @@ import CoreLocation
 extension OurCustomersViewModel {
     struct State {
         var location: CLLocation?
-    }
 
+        func getDistance(for customer: Customer) -> String {
+            if let location {
+                let customerLocation = CLLocation(latitude: customer.latitude,
+                                                  longitude: customer.longitude)
+                let locationString = String(format: "%.2f", location.distance(from: customerLocation) / 1000)
+                return "\(locationString) Km from you"
+            } else {
+                return "No location available"
+            }
+        }
+    }
+    
     enum Intent {
         case load
     }
