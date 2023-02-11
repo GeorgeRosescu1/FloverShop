@@ -20,7 +20,6 @@ struct OurCustomersView: View {
                 HStack {
                     Button {
                         dismiss.callAsFunction()
-
                     } label: {
                         Image(systemName: "arrow.backward")
                             .font(.custom(Constants.Fonts.bold, size: Constants.Fonts.body))
@@ -36,10 +35,11 @@ struct OurCustomersView: View {
                 ScrollView(showsIndicators: false) {
                     VStack {
                         ForEach(customers) { customer in
-                            CustomerCell(customer: customer)
+                            CustomerCell(customer: customer, vendorLocation: viewModel.state.location)
                         }
                     }
                 }
+                .padding(.top, Constants.defaultPadding)
             }
             .padding(.horizontal, Constants.defaultPadding)
         }
@@ -50,6 +50,6 @@ struct OurCustomersView: View {
 // MARK: - Preview
 struct OurCustomersView_Previews: PreviewProvider {
     static var previews: some View {
-        OurCustomersView(customers: [])
+        OurCustomersView(customers: [.init(id: 1, name: "Marinel", latitude: 46.23, longitude: 23.12)])
     }
 }

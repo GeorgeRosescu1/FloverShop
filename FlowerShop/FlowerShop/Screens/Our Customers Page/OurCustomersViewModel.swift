@@ -6,35 +6,43 @@
 //
 
 import Foundation
+import CoreLocation
 
 extension OurCustomersViewModel {
     struct State {
-        var customers: [CustomerDTO]
+        var location: CLLocation?
     }
 
     enum Intent {
-        case fetchCustomers
+        case load
     }
 }
 
-final class OurCustomersViewModel: ViewModel {
+final class OurCustomersViewModel: NSObject, ViewModel, CLLocationManagerDelegate {
     @Published private(set) var state: State
 
+    private let manager = CLLocationManager()
 
-    init() {
-        self.state = State(customers: [])
+
+    override init() {
+        self.state = State(location: nil)
+        super.init()
+        
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else { return }
+        state.location = location
     }
 
     func intent(_ intent: Intent) {
         switch intent {
-        case .fetchCustomers:
-            Task {
-                let customersDTOs: [CustomerDTO] = try! await  ApiService.request("customers", httpMethod: .get)
-
-                await MainActor.run {
-                    state.customers = customersDTOs
-                }
-            }
+        case .load:
+            print("a")
         }
     }
 }
