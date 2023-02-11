@@ -31,6 +31,7 @@
 		F0FAD3C72997DA18006B05F9 /* OurCustomersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3C62997DA18006B05F9 /* OurCustomersViewModel.swift */; };
 		F0FAD3C92997DA7B006B05F9 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3C82997DA7B006B05F9 /* Customer.swift */; };
 		F0FAD3CB2997DB06006B05F9 /* CustomerDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3CA2997DB06006B05F9 /* CustomerDTO.swift */; };
+		F0FAD3D02997DE8F006B05F9 /* CustomerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3CF2997DE8F006B05F9 /* CustomerCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		F0FAD3C62997DA18006B05F9 /* OurCustomersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OurCustomersViewModel.swift; sourceTree = "<group>"; };
 		F0FAD3C82997DA7B006B05F9 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
 		F0FAD3CA2997DB06006B05F9 /* CustomerDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDTO.swift; sourceTree = "<group>"; };
+		F0FAD3CF2997DE8F006B05F9 /* CustomerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				F0FAD3CC2997DB42006B05F9 /* Logic */,
+				F0FAD3CE2997DE6E006B05F9 /* UI Components */,
 				F0FAD3C42997D7FA006B05F9 /* OurCustomersView.swift */,
 				F0FAD3C62997DA18006B05F9 /* OurCustomersViewModel.swift */,
 			);
@@ -254,6 +257,14 @@
 			children = (
 			);
 			path = Logic;
+			sourceTree = "<group>";
+		};
+		F0FAD3CE2997DE6E006B05F9 /* UI Components */ = {
+			isa = PBXGroup;
+			children = (
+				F0FAD3CF2997DE8F006B05F9 /* CustomerCell.swift */,
+			);
+			path = "UI Components";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,6 +359,7 @@
 				F0FAD3AD2997A359006B05F9 /* ViewModel.swift in Sources */,
 				F0FAD3C92997DA7B006B05F9 /* Customer.swift in Sources */,
 				F0FAD3B32997A4EA006B05F9 /* HomeDataStore.swift in Sources */,
+				F0FAD3D02997DE8F006B05F9 /* CustomerCell.swift in Sources */,
 				F0FAD3B62997A6C7006B05F9 /* OrderDTO.swift in Sources */,
 				F0FAD3C72997DA18006B05F9 /* OurCustomersViewModel.swift in Sources */,
 				F0FAD3CB2997DB06006B05F9 /* CustomerDTO.swift in Sources */,
