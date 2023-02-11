@@ -14,6 +14,7 @@ struct OrderCell: View {
         HStack {
             Text(order.description)
             Spacer()
+            
         }
         .background {
             Color.white
