@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
-    let orders: [Order] = [Order(id: 1, description: "floare de colr", price: 25, imageURL: "", status: .delivered), Order(id: 2, description: "floarea soarelui", price: 60, imageURL: "", status: .pending)]
+    @StateObject private var viewModel = HomeViewModel(dataStore: HomeDataStoreImpl())
 
     var body: some View {
         ZStack {
@@ -24,7 +24,7 @@ struct HomeView: View {
                     }
 
                     VStack {
-                        ForEach(orders) { order in
+                        ForEach(viewModel.state.orders) { order in
                             OrderCell(order: order)
                                 .padding(.bottom, Constants.defaultPadding)
                         }
@@ -33,6 +33,9 @@ struct HomeView: View {
                 }
                 .padding(.horizontal, Constants.defaultPadding)
             }
+        }
+        .onAppear {
+            viewModel.intent(.load)
         }
     }
 }

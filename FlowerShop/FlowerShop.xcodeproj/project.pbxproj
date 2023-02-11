@@ -20,6 +20,12 @@
 		F0FAD3A72997A234006B05F9 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3A62997A234006B05F9 /* OrderCell.swift */; };
 		F0FAD3AA2997A340006B05F9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3A92997A340006B05F9 /* HomeViewModel.swift */; };
 		F0FAD3AD2997A359006B05F9 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3AC2997A359006B05F9 /* ViewModel.swift */; };
+		F0FAD3B02997A4AC006B05F9 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3AF2997A4AC006B05F9 /* ApiService.swift */; };
+		F0FAD3B32997A4EA006B05F9 /* HomeDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3B22997A4EA006B05F9 /* HomeDataStore.swift */; };
+		F0FAD3B62997A6C7006B05F9 /* OrderDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3B52997A6C7006B05F9 /* OrderDTO.swift */; };
+		F0FAD3B82997AC41006B05F9 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3B72997AC41006B05F9 /* Mapper.swift */; };
+		F0FAD3BA2997AD15006B05F9 /* OrderMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3B92997AD15006B05F9 /* OrderMapper.swift */; };
+		F0FAD3BF2997AE05006B05F9 /* HomeErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3BE2997AE05006B05F9 /* HomeErrors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +44,12 @@
 		F0FAD3A62997A234006B05F9 /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
 		F0FAD3A92997A340006B05F9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F0FAD3AC2997A359006B05F9 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		F0FAD3AF2997A4AC006B05F9 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		F0FAD3B22997A4EA006B05F9 /* HomeDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataStore.swift; sourceTree = "<group>"; };
+		F0FAD3B52997A6C7006B05F9 /* OrderDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDTO.swift; sourceTree = "<group>"; };
+		F0FAD3B72997AC41006B05F9 /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
+		F0FAD3B92997AD15006B05F9 /* OrderMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderMapper.swift; sourceTree = "<group>"; };
+		F0FAD3BE2997AE05006B05F9 /* HomeErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeErrors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +85,7 @@
 				F0FAD39C299796C9006B05F9 /* Info.plist */,
 				F0FAD3842997908B006B05F9 /* FlowerShopApp.swift */,
 				F0FAD3AB2997A34D006B05F9 /* Common Logic */,
+				F0FAD3AE2997A477006B05F9 /* Networking */,
 				F0FAD3A029979FC0006B05F9 /* Screens */,
 				F0FAD3A22997A02C006B05F9 /* Models */,
 				F0FAD39529979606006B05F9 /* Resource */,
@@ -129,6 +142,7 @@
 		F0FAD3A129979FD7006B05F9 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				F0FAD3B12997A4D2006B05F9 /* Business Logic */,
 				F0FAD3A52997A223006B05F9 /* UI Components */,
 				F0FAD3862997908B006B05F9 /* HomeView.swift */,
 				F0FAD3A92997A340006B05F9 /* HomeViewModel.swift */,
@@ -156,8 +170,60 @@
 			isa = PBXGroup;
 			children = (
 				F0FAD3AC2997A359006B05F9 /* ViewModel.swift */,
+				F0FAD3B72997AC41006B05F9 /* Mapper.swift */,
 			);
 			path = "Common Logic";
+			sourceTree = "<group>";
+		};
+		F0FAD3AE2997A477006B05F9 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				F0FAD3B42997A6BA006B05F9 /* DTOs */,
+				F0FAD3AF2997A4AC006B05F9 /* ApiService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		F0FAD3B12997A4D2006B05F9 /* Business Logic */ = {
+			isa = PBXGroup;
+			children = (
+				F0FAD3BB2997ADEB006B05F9 /* DataStore */,
+				F0FAD3BD2997ADF6006B05F9 /* Errors */,
+				F0FAD3BC2997ADF1006B05F9 /* Mappings */,
+			);
+			path = "Business Logic";
+			sourceTree = "<group>";
+		};
+		F0FAD3B42997A6BA006B05F9 /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				F0FAD3B52997A6C7006B05F9 /* OrderDTO.swift */,
+			);
+			path = DTOs;
+			sourceTree = "<group>";
+		};
+		F0FAD3BB2997ADEB006B05F9 /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+				F0FAD3B22997A4EA006B05F9 /* HomeDataStore.swift */,
+			);
+			path = DataStore;
+			sourceTree = "<group>";
+		};
+		F0FAD3BC2997ADF1006B05F9 /* Mappings */ = {
+			isa = PBXGroup;
+			children = (
+				F0FAD3B92997AD15006B05F9 /* OrderMapper.swift */,
+			);
+			path = Mappings;
+			sourceTree = "<group>";
+		};
+		F0FAD3BD2997ADF6006B05F9 /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				F0FAD3BE2997AE05006B05F9 /* HomeErrors.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,12 +300,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0FAD3872997908B006B05F9 /* HomeView.swift in Sources */,
+				F0FAD3BA2997AD15006B05F9 /* OrderMapper.swift in Sources */,
 				F0FAD3852997908B006B05F9 /* FlowerShopApp.swift in Sources */,
 				F0FAD3AA2997A340006B05F9 /* HomeViewModel.swift in Sources */,
 				F0FAD3A42997A037006B05F9 /* Order.swift in Sources */,
+				F0FAD3B82997AC41006B05F9 /* Mapper.swift in Sources */,
 				F0FAD39429979427006B05F9 /* Color+Utils.swift in Sources */,
+				F0FAD3BF2997AE05006B05F9 /* HomeErrors.swift in Sources */,
+				F0FAD3B02997A4AC006B05F9 /* ApiService.swift in Sources */,
 				F0FAD3A72997A234006B05F9 /* OrderCell.swift in Sources */,
 				F0FAD3AD2997A359006B05F9 /* ViewModel.swift in Sources */,
+				F0FAD3B32997A4EA006B05F9 /* HomeDataStore.swift in Sources */,
+				F0FAD3B62997A6C7006B05F9 /* OrderDTO.swift in Sources */,
 				F0FAD39F29979EE8006B05F9 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
