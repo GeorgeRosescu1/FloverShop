@@ -14,6 +14,8 @@
 		F02502C72998EF1D00B3BA68 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02502C62998EF1D00B3BA68 /* RealmService.swift */; };
 		F02502CA2998EF9D00B3BA68 /* OrderRealmDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02502C92998EF9D00B3BA68 /* OrderRealmDTO.swift */; };
 		F02502CC2998F14100B3BA68 /* CustomerRealmDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02502CB2998F14100B3BA68 /* CustomerRealmDTO.swift */; };
+		F02502CF2998F44400B3BA68 /* OrderRealmMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02502CE2998F44400B3BA68 /* OrderRealmMapper.swift */; };
+		F02502D12998F46A00B3BA68 /* CustomerRealmMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02502D02998F46A00B3BA68 /* CustomerRealmMapper.swift */; };
 		F0FAD3852997908B006B05F9 /* FlowerShopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3842997908B006B05F9 /* FlowerShopApp.swift */; };
 		F0FAD3872997908B006B05F9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3862997908B006B05F9 /* HomeView.swift */; };
 		F0FAD3892997908D006B05F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0FAD3882997908D006B05F9 /* Assets.xcassets */; };
@@ -54,6 +56,8 @@
 		F02502C62998EF1D00B3BA68 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		F02502C92998EF9D00B3BA68 /* OrderRealmDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRealmDTO.swift; sourceTree = "<group>"; };
 		F02502CB2998F14100B3BA68 /* CustomerRealmDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerRealmDTO.swift; sourceTree = "<group>"; };
+		F02502CE2998F44400B3BA68 /* OrderRealmMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRealmMapper.swift; sourceTree = "<group>"; };
+		F02502D02998F46A00B3BA68 /* CustomerRealmMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerRealmMapper.swift; sourceTree = "<group>"; };
 		F0FAD3812997908B006B05F9 /* FlowerShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowerShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0FAD3842997908B006B05F9 /* FlowerShopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerShopApp.swift; sourceTree = "<group>"; };
 		F0FAD3862997908B006B05F9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 		F02502C42998EEC800B3BA68 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				F0FAD3BC2997ADF1006B05F9 /* Mappings */,
 				F0FAD3B42997A6BA006B05F9 /* DTOs */,
 				F0FAD3AF2997A4AC006B05F9 /* ApiService.swift */,
 			);
@@ -124,6 +129,7 @@
 		F02502C52998EF0F00B3BA68 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
+				F02502CD2998F41300B3BA68 /* Mappings */,
 				F02502C82998EF8B00B3BA68 /* DTOs */,
 				F02502C62998EF1D00B3BA68 /* RealmService.swift */,
 			);
@@ -137,6 +143,15 @@
 				F02502CB2998F14100B3BA68 /* CustomerRealmDTO.swift */,
 			);
 			path = DTOs;
+			sourceTree = "<group>";
+		};
+		F02502CD2998F41300B3BA68 /* Mappings */ = {
+			isa = PBXGroup;
+			children = (
+				F02502CE2998F44400B3BA68 /* OrderRealmMapper.swift */,
+				F02502D02998F46A00B3BA68 /* CustomerRealmMapper.swift */,
+			);
+			path = Mappings;
 			sourceTree = "<group>";
 		};
 		F0FAD3782997908B006B05F9 = {
@@ -274,7 +289,6 @@
 				F0FAD3D72997E815006B05F9 /* Models */,
 				F0FAD3BB2997ADEB006B05F9 /* DataStore */,
 				F0FAD3BD2997ADF6006B05F9 /* Errors */,
-				F0FAD3BC2997ADF1006B05F9 /* Mappings */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -440,6 +454,7 @@
 				F0FAD3872997908B006B05F9 /* HomeView.swift in Sources */,
 				F0FAD3BA2997AD15006B05F9 /* OrderMapper.swift in Sources */,
 				F0FAD3DD2998012A006B05F9 /* Image+Utils.swift in Sources */,
+				F02502CF2998F44400B3BA68 /* OrderRealmMapper.swift in Sources */,
 				F02502BC2998D70300B3BA68 /* CustomNavigationBar.swift in Sources */,
 				F0FAD3D42997E2C4006B05F9 /* CustomerMapper.swift in Sources */,
 				F0FAD3852997908B006B05F9 /* FlowerShopApp.swift in Sources */,
@@ -456,6 +471,7 @@
 				F0FAD3AD2997A359006B05F9 /* ViewModel.swift in Sources */,
 				F02502CC2998F14100B3BA68 /* CustomerRealmDTO.swift in Sources */,
 				F0FAD3C92997DA7B006B05F9 /* Customer.swift in Sources */,
+				F02502D12998F46A00B3BA68 /* CustomerRealmMapper.swift in Sources */,
 				F0FAD3B32997A4EA006B05F9 /* HomeDataStore.swift in Sources */,
 				F0FAD3D02997DE8F006B05F9 /* CustomerCell.swift in Sources */,
 				F0FAD3B62997A6C7006B05F9 /* OrderDTO.swift in Sources */,

@@ -85,6 +85,7 @@ final class HomeViewModel: ViewModel {
         do {
             return try await dataStore.fetchOrders()
         } catch {
+            // TODO: add error handeleing
             return []
         }
     }
@@ -93,6 +94,7 @@ final class HomeViewModel: ViewModel {
         do {
             return try await dataStore.fetchCustomers()
         } catch {
+            // TODO: add error handeleing
             return []
         }
     }
