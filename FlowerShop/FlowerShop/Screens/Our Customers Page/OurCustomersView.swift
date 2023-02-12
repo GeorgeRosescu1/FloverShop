@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct OurCustomersView: View {
-    @Environment(\.dismiss) var dismiss
-
     @StateObject private var viewModel = OurCustomersViewModel()
     let customers: [Customer]
 
@@ -17,20 +15,7 @@ struct OurCustomersView: View {
         ZStack {
             Color.wolfWhite.ignoresSafeArea()
             VStack {
-                HStack {
-                    Button {
-                        dismiss.callAsFunction()
-                    } label: {
-                        Image.back
-                            .font(.custom(Constants.Fonts.bold, size: Constants.Fonts.smallBody))
-                            .foregroundColor(.wolfBlack)
-                    }
-                    Spacer()
-                    Text("Our customers")
-                        .font(.custom(Constants.Fonts.bold, size: Constants.Fonts.smallBody))
-                        .foregroundColor(.wolfBlack)
-                    Spacer()
-                }
+                CustomNavigationBar(title: "Our customers")
                 Spacer()
                 ScrollView(showsIndicators: false) {
                     VStack {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F02502BC2998D70300B3BA68 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02502BB2998D70300B3BA68 /* CustomNavigationBar.swift */; };
 		F0FAD3852997908B006B05F9 /* FlowerShopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3842997908B006B05F9 /* FlowerShopApp.swift */; };
 		F0FAD3872997908B006B05F9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3862997908B006B05F9 /* HomeView.swift */; };
 		F0FAD3892997908D006B05F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0FAD3882997908D006B05F9 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F02502BB2998D70300B3BA68 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		F0FAD3812997908B006B05F9 /* FlowerShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowerShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0FAD3842997908B006B05F9 /* FlowerShopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerShopApp.swift; sourceTree = "<group>"; };
 		F0FAD3862997908B006B05F9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -89,6 +91,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F02502BA2998D6EF00B3BA68 /* Common UI */ = {
+			isa = PBXGroup;
+			children = (
+				F02502BB2998D70300B3BA68 /* CustomNavigationBar.swift */,
+			);
+			path = "Common UI";
+			sourceTree = "<group>";
+		};
 		F0FAD3782997908B006B05F9 = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +122,7 @@
 				F0FAD3842997908B006B05F9 /* FlowerShopApp.swift */,
 				F0FAD3A029979FC0006B05F9 /* Screens */,
 				F0FAD3AB2997A34D006B05F9 /* Common Logic */,
+				F02502BA2998D6EF00B3BA68 /* Common UI */,
 				F0FAD3A22997A02C006B05F9 /* Models */,
 				F0FAD3AE2997A477006B05F9 /* Networking */,
 				F0FAD39529979606006B05F9 /* Resource */,
@@ -386,6 +397,7 @@
 				F0FAD3872997908B006B05F9 /* HomeView.swift in Sources */,
 				F0FAD3BA2997AD15006B05F9 /* OrderMapper.swift in Sources */,
 				F0FAD3DD2998012A006B05F9 /* Image+Utils.swift in Sources */,
+				F02502BC2998D70300B3BA68 /* CustomNavigationBar.swift in Sources */,
 				F0FAD3D42997E2C4006B05F9 /* CustomerMapper.swift in Sources */,
 				F0FAD3852997908B006B05F9 /* FlowerShopApp.swift in Sources */,
 				F0FAD3AA2997A340006B05F9 /* HomeViewModel.swift in Sources */,

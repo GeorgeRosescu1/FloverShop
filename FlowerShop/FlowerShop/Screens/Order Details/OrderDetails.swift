@@ -16,17 +16,7 @@ struct OrderDetails: View {
         ZStack {
             Color.wolfWhite.ignoresSafeArea()
             VStack {
-                HStack {
-                    Button {
-                        dismiss.callAsFunction()
-                    } label: {
-                        Image.back
-                            .font(.custom(Constants.Fonts.bold, size: Constants.Fonts.smallBody))
-                            .foregroundColor(.wolfBlack)
-                    }
-                    Spacer()
-                }
-
+                CustomNavigationBar()
                 VStack(alignment: .leading) {
                     KFImage(URL(string: order.imageURL))
                         .resizable()
