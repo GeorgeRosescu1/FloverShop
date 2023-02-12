@@ -11,7 +11,8 @@ extension HomeViewModel {
     struct State {
         var ordersWithCustomers: [OrderWithCustomer]
         var customers: [Customer]
-        var error: Error?
+        var ordersError: Error?
+        var customersError: Error?
 
         var newOrdersCount: Int {
             ordersWithCustomers.filter { $0.status == .new }.count
@@ -39,7 +40,10 @@ final class HomeViewModel: ViewModel {
     private let dataStore: HomeDataStore
 
     init(dataStore: HomeDataStore) {
-        self.state = State(ordersWithCustomers: [], customers: [], error: nil)
+        self.state = State(ordersWithCustomers: [],
+                           customers: [],
+                           ordersError: nil,
+                           customersError: nil)
         self.dataStore = dataStore
     }
 
@@ -114,18 +118,17 @@ final class HomeViewModel: ViewModel {
         }
     }
 
-
-
     private func refreshOrders() async -> [Order] {
         do {
+            let orders = try await dataStore.refreshOrders()
             await MainActor.run {
-                state.error = nil
+                state.ordersError = nil
             }
 
-            return try await dataStore.refreshOrders()
+            return orders
         } catch {
             await MainActor.run {
-                state.error = error
+                state.ordersError = error
             }
             return []
         }
@@ -133,14 +136,15 @@ final class HomeViewModel: ViewModel {
 
     private func refreshCustomers() async -> [Customer] {
         do {
+            let customers = try await dataStore.refreshCustomers()
             await MainActor.run {
-                state.error = nil
+                state.customersError = nil
             }
 
-            return try await dataStore.refreshCustomers()
+            return customers
         } catch {
             await MainActor.run {
-                state.error = error
+                state.customersError = error
             }
             return []
         }
@@ -148,14 +152,15 @@ final class HomeViewModel: ViewModel {
 
     private func fetchOrders() async -> [Order] {
         do {
+            let orders = try await dataStore.fetchOrders()
             await MainActor.run {
-                state.error = nil
+                state.ordersError = nil
             }
 
-            return try await dataStore.fetchOrders()
+            return orders
         } catch {
             await MainActor.run {
-                state.error = error
+                state.ordersError = error
             }
             return []
         }
@@ -163,14 +168,15 @@ final class HomeViewModel: ViewModel {
 
     private func fetchCustomers() async -> [Customer] {
         do {
+            let customers = try await dataStore.fetchCustomers()
             await MainActor.run {
-                state.error = nil
+                state.customersError = nil
             }
 
-            return try await dataStore.fetchCustomers()
+            return customers
         } catch {
             await MainActor.run {
-                state.error = error
+                state.customersError = error
             }
             return []
         }
