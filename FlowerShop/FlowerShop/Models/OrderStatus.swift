@@ -7,10 +7,18 @@
 
 import Foundation
 
-enum OrderStatus: String {
-    case delivered
-    case pending
-    case new
+enum OrderStatus: String, Segmentable {
+    case new = "New"
+    case pending = "Pending"
+    case delivered = "Delivered"
+
+    var id: String {
+        self.rawValue
+    }
+
+    var title: String {
+        self.rawValue
+    }
 
     var description: String {
         switch self {
@@ -26,4 +34,8 @@ enum OrderStatus: String {
     var isDelivered: Bool {
         self == .delivered
     }
+}
+
+protocol Segmentable: Identifiable, Equatable, CaseIterable {
+    var title: String { get }
 }
