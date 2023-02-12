@@ -11,7 +11,7 @@ extension HomeViewModel {
     struct State {
         var ordersWithCustomers: [OrderWithCustomer]
         var customers: [Customer]
-
+        var error: Error?
 
         var newOrdersCount: Int {
             ordersWithCustomers.filter { $0.status == .new }.count
@@ -39,7 +39,7 @@ final class HomeViewModel: ViewModel {
     private let dataStore: HomeDataStore
 
     init(dataStore: HomeDataStore) {
-        self.state = State(ordersWithCustomers: [], customers: [])
+        self.state = State(ordersWithCustomers: [], customers: [], error: nil)
         self.dataStore = dataStore
     }
 
@@ -48,24 +48,26 @@ final class HomeViewModel: ViewModel {
         case .load:
             fetchData()
         case .changeOrderStatus(let orderId, let status):
-            let newOrders = state.ordersWithCustomers.map {
-                if $0.id == orderId {
-                    return OrderWithCustomer(id: $0.id,
-                                             description: $0.description,
-                                             price: $0.price,
-                                             customer: $0.customer,
-                                             imageURL: $0.imageURL,
-                                             status: status)
-                } else {
-                    return $0
-                }
-            }
-
-            state.ordersWithCustomers = newOrders
-
+            changeOrderStatus(orderId: orderId, status: status)
         case .refreshOrders:
             refreshData()
         }
+    }
+
+    private func changeOrderStatus(orderId: Int, status: OrderStatus) {
+        guard let orderWithCustomer = state.ordersWithCustomers.first(where: { $0.id == orderId }) else {
+            return
+        }
+
+        let order = Order(id: orderWithCustomer.id,
+                          description: orderWithCustomer.description,
+                          price: orderWithCustomer.price,
+                          customerId: orderWithCustomer.customer.id,
+                          imageURL: orderWithCustomer.imageURL,
+                          status: status)
+
+        let orders = dataStore.updateOrder(order: order)
+        state.ordersWithCustomers = getOrdersWithCustomers(orders: orders, customers: state.customers)
     }
 
     private func refreshData() {
@@ -116,36 +118,60 @@ final class HomeViewModel: ViewModel {
 
     private func refreshOrders() async -> [Order] {
         do {
+            await MainActor.run {
+                state.error = nil
+            }
+
             return try await dataStore.refreshOrders()
         } catch {
-            // TODO: add error handeleing
+            await MainActor.run {
+                state.error = error
+            }
             return []
         }
     }
 
     private func refreshCustomers() async -> [Customer] {
         do {
+            await MainActor.run {
+                state.error = nil
+            }
+
             return try await dataStore.refreshCustomers()
         } catch {
-            // TODO: add error handeleing
+            await MainActor.run {
+                state.error = error
+            }
             return []
         }
     }
 
     private func fetchOrders() async -> [Order] {
         do {
+            await MainActor.run {
+                state.error = nil
+            }
+
             return try await dataStore.fetchOrders()
         } catch {
-            // TODO: add error handeleing
+            await MainActor.run {
+                state.error = error
+            }
             return []
         }
     }
 
     private func fetchCustomers() async -> [Customer] {
         do {
+            await MainActor.run {
+                state.error = nil
+            }
+
             return try await dataStore.fetchCustomers()
         } catch {
-            // TODO: add error handeleing
+            await MainActor.run {
+                state.error = error
+            }
             return []
         }
     }

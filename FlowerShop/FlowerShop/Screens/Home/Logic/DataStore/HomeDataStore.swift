@@ -16,6 +16,9 @@ protocol HomeDataStore {
     func refreshOrders() async throws -> [Order]
     /// Fetch customers only from API
     func refreshCustomers() async throws -> [Customer]
+    /// Update the given order into Realm
+    /// - Returns: Updated list of orders
+    func updateOrder(order: Order) -> [Order]
 }
 
 struct HomeDataStoreImpl: HomeDataStore {
@@ -31,6 +34,20 @@ struct HomeDataStoreImpl: HomeDataStore {
             // if there are no orders in local DB fetch them from API
             return try await refreshOrders()
         }
+    }
+
+    func updateOrder(order: Order) -> [Order] {
+        let orderDTO = OrderRealmDTO(id: order.id,
+                                     orderDescription: order.description,
+                                     price: order.price,
+                                     customerId: order.customerId,
+                                     imageURL: order.imageURL,
+                                     status: order.status.rawValue)
+
+        RealmService.saveOrder(orderDTO)
+        let realmOrders = RealmService.getAllOrders()
+
+        return realmOrders.compactMap { OrderRealmMapper.map(from: $0) }
     }
 
     func fetchCustomers() async throws -> [Customer] {
