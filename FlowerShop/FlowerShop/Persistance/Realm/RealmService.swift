@@ -14,7 +14,7 @@ struct RealmService {
         let realm: Realm = try! Realm()
 
         try! realm.write {
-            realm.add(order)
+            realm.add(order, update: .modified)
         }
     }
 
@@ -22,7 +22,7 @@ struct RealmService {
         let realm: Realm = try! Realm()
 
         try! realm.write {
-            realm.add(orders)
+            realm.add(orders, update: .modified)
         }
     }
 
@@ -36,7 +36,7 @@ struct RealmService {
         let realm: Realm = try! Realm()
 
         try! realm.write {
-            realm.add(object)
+            realm.add(object, update: .modified)
         }
     }
 
@@ -44,7 +44,7 @@ struct RealmService {
         let realm: Realm = try! Realm()
 
         try! realm.write {
-            realm.add(customers)
+            realm.add(customers, update: .modified)
         }
     }
 

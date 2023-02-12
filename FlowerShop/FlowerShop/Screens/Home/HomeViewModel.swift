@@ -11,11 +11,25 @@ extension HomeViewModel {
     struct State {
         var ordersWithCustomers: [OrderWithCustomer]
         var customers: [Customer]
+
+
+        var newOrdersCount: Int {
+            ordersWithCustomers.filter { $0.status == .new }.count
+        }
+
+        var pendingOrdersCount: Int {
+            ordersWithCustomers.filter { $0.status == .pending }.count
+        }
+
+        var deliveredOrdersCount: Int {
+            ordersWithCustomers.filter { $0.status == .delivered }.count
+        }
     }
 
     enum Intent {
         case load
         case changeOrderStatus(Int, OrderStatus)
+        case refreshOrders
     }
 }
 
@@ -48,6 +62,23 @@ final class HomeViewModel: ViewModel {
             }
 
             state.ordersWithCustomers = newOrders
+
+        case .refreshOrders:
+            refreshData()
+        }
+    }
+
+    private func refreshData() {
+        Task {
+            async let orders = refreshOrders()
+            async let customers = refreshCustomers()
+
+            let ordersWithCustomers: [OrderWithCustomer] = getOrdersWithCustomers(orders: await orders, customers: await customers)
+            let fetchedCustomers = await customers
+            await MainActor.run {
+                state.ordersWithCustomers = ordersWithCustomers
+                state.customers = fetchedCustomers
+            }
         }
     }
 
@@ -78,6 +109,26 @@ final class HomeViewModel: ViewModel {
                                      customer: customer,
                                      imageURL: order.imageURL,
                                      status: order.status)
+        }
+    }
+
+
+
+    private func refreshOrders() async -> [Order] {
+        do {
+            return try await dataStore.refreshOrders()
+        } catch {
+            // TODO: add error handeleing
+            return []
+        }
+    }
+
+    private func refreshCustomers() async -> [Customer] {
+        do {
+            return try await dataStore.refreshCustomers()
+        } catch {
+            // TODO: add error handeleing
+            return []
         }
     }
 
