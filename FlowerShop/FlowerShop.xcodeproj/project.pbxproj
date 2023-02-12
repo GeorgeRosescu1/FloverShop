@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		F02502BC2998D70300B3BA68 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02502BB2998D70300B3BA68 /* CustomNavigationBar.swift */; };
 		F02502BE2998E55F00B3BA68 /* CustomSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02502BD2998E55F00B3BA68 /* CustomSegmentView.swift */; };
+		F02502C12998EE9000B3BA68 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = F02502C02998EE9000B3BA68 /* Realm */; };
+		F02502C32998EE9000B3BA68 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F02502C22998EE9000B3BA68 /* RealmSwift */; };
+		F02502C72998EF1D00B3BA68 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02502C62998EF1D00B3BA68 /* RealmService.swift */; };
+		F02502CA2998EF9D00B3BA68 /* OrderRealmDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02502C92998EF9D00B3BA68 /* OrderRealmDTO.swift */; };
+		F02502CC2998F14100B3BA68 /* CustomerRealmDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02502CB2998F14100B3BA68 /* CustomerRealmDTO.swift */; };
 		F0FAD3852997908B006B05F9 /* FlowerShopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3842997908B006B05F9 /* FlowerShopApp.swift */; };
 		F0FAD3872997908B006B05F9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3862997908B006B05F9 /* HomeView.swift */; };
 		F0FAD3892997908D006B05F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0FAD3882997908D006B05F9 /* Assets.xcassets */; };
@@ -46,6 +51,9 @@
 /* Begin PBXFileReference section */
 		F02502BB2998D70300B3BA68 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		F02502BD2998E55F00B3BA68 /* CustomSegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentView.swift; sourceTree = "<group>"; };
+		F02502C62998EF1D00B3BA68 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		F02502C92998EF9D00B3BA68 /* OrderRealmDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRealmDTO.swift; sourceTree = "<group>"; };
+		F02502CB2998F14100B3BA68 /* CustomerRealmDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerRealmDTO.swift; sourceTree = "<group>"; };
 		F0FAD3812997908B006B05F9 /* FlowerShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowerShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0FAD3842997908B006B05F9 /* FlowerShopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerShopApp.swift; sourceTree = "<group>"; };
 		F0FAD3862997908B006B05F9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -86,6 +94,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F02502C32998EE9000B3BA68 /* RealmSwift in Frameworks */,
+				F02502C12998EE9000B3BA68 /* Realm in Frameworks */,
 				F0FAD3C22997B5E7006B05F9 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,6 +110,33 @@
 				F02502BD2998E55F00B3BA68 /* CustomSegmentView.swift */,
 			);
 			path = "Common UI";
+			sourceTree = "<group>";
+		};
+		F02502C42998EEC800B3BA68 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				F0FAD3B42997A6BA006B05F9 /* DTOs */,
+				F0FAD3AF2997A4AC006B05F9 /* ApiService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		F02502C52998EF0F00B3BA68 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				F02502C82998EF8B00B3BA68 /* DTOs */,
+				F02502C62998EF1D00B3BA68 /* RealmService.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		F02502C82998EF8B00B3BA68 /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				F02502C92998EF9D00B3BA68 /* OrderRealmDTO.swift */,
+				F02502CB2998F14100B3BA68 /* CustomerRealmDTO.swift */,
+			);
+			path = DTOs;
 			sourceTree = "<group>";
 		};
 		F0FAD3782997908B006B05F9 = {
@@ -127,7 +164,7 @@
 				F0FAD3AB2997A34D006B05F9 /* Common Logic */,
 				F02502BA2998D6EF00B3BA68 /* Common UI */,
 				F0FAD3A22997A02C006B05F9 /* Models */,
-				F0FAD3AE2997A477006B05F9 /* Networking */,
+				F0FAD3AE2997A477006B05F9 /* Persistance */,
 				F0FAD39529979606006B05F9 /* Resource */,
 				F0FAD3922997937F006B05F9 /* Utils */,
 				F0FAD3882997908D006B05F9 /* Assets.xcassets */,
@@ -222,13 +259,13 @@
 			path = "Common Logic";
 			sourceTree = "<group>";
 		};
-		F0FAD3AE2997A477006B05F9 /* Networking */ = {
+		F0FAD3AE2997A477006B05F9 /* Persistance */ = {
 			isa = PBXGroup;
 			children = (
-				F0FAD3B42997A6BA006B05F9 /* DTOs */,
-				F0FAD3AF2997A4AC006B05F9 /* ApiService.swift */,
+				F02502C52998EF0F00B3BA68 /* Realm */,
+				F02502C42998EEC800B3BA68 /* Networking */,
 			);
-			path = Networking;
+			path = Persistance;
 			sourceTree = "<group>";
 		};
 		F0FAD3B12997A4D2006B05F9 /* Logic */ = {
@@ -336,6 +373,8 @@
 			name = FlowerShop;
 			packageProductDependencies = (
 				F0FAD3C12997B5E7006B05F9 /* Kingfisher */,
+				F02502C02998EE9000B3BA68 /* Realm */,
+				F02502C22998EE9000B3BA68 /* RealmSwift */,
 			);
 			productName = FlowerShop;
 			productReference = F0FAD3812997908B006B05F9 /* FlowerShop.app */;
@@ -367,6 +406,7 @@
 			mainGroup = F0FAD3782997908B006B05F9;
 			packageReferences = (
 				F0FAD3C02997B5E7006B05F9 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				F02502BF2998EE9000B3BA68 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = F0FAD3822997908B006B05F9 /* Products */;
 			projectDirPath = "";
@@ -409,10 +449,12 @@
 				F0FAD3D62997E546006B05F9 /* UINavigationController+Utils.swift in Sources */,
 				F0FAD39429979427006B05F9 /* Color+Utils.swift in Sources */,
 				F0FAD3BF2997AE05006B05F9 /* HomeErrors.swift in Sources */,
+				F02502CA2998EF9D00B3BA68 /* OrderRealmDTO.swift in Sources */,
 				F0FAD3B02997A4AC006B05F9 /* ApiService.swift in Sources */,
 				F0FAD3A72997A234006B05F9 /* OrderCell.swift in Sources */,
 				F0FAD3DB2997E847006B05F9 /* OrderStatus.swift in Sources */,
 				F0FAD3AD2997A359006B05F9 /* ViewModel.swift in Sources */,
+				F02502CC2998F14100B3BA68 /* CustomerRealmDTO.swift in Sources */,
 				F0FAD3C92997DA7B006B05F9 /* Customer.swift in Sources */,
 				F0FAD3B32997A4EA006B05F9 /* HomeDataStore.swift in Sources */,
 				F0FAD3D02997DE8F006B05F9 /* CustomerCell.swift in Sources */,
@@ -420,6 +462,7 @@
 				F0FAD3C72997DA18006B05F9 /* OurCustomersViewModel.swift in Sources */,
 				F0FAD3CB2997DB06006B05F9 /* CustomerDTO.swift in Sources */,
 				F0FAD3DF299801B6006B05F9 /* OrderDetails.swift in Sources */,
+				F02502C72998EF1D00B3BA68 /* RealmService.swift in Sources */,
 				F0FAD3C52997D7FA006B05F9 /* OurCustomersView.swift in Sources */,
 				F0FAD3D92997E81E006B05F9 /* OrderWithCustomer.swift in Sources */,
 				F0FAD39F29979EE8006B05F9 /* Constants.swift in Sources */,
@@ -637,6 +680,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F02502BF2998EE9000B3BA68 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		F0FAD3C02997B5E7006B05F9 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -648,6 +699,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F02502C02998EE9000B3BA68 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F02502BF2998EE9000B3BA68 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		F02502C22998EE9000B3BA68 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F02502BF2998EE9000B3BA68 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
 		F0FAD3C12997B5E7006B05F9 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F0FAD3C02997B5E7006B05F9 /* XCRemoteSwiftPackageReference "Kingfisher" */;
