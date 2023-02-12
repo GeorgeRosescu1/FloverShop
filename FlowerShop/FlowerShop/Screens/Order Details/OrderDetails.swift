@@ -9,7 +9,7 @@ import SwiftUI
 import Kingfisher
 
 struct OrderDetails: View {
-    @State private var ostatus: OrderStatus = .new
+    @Binding var orderStatus: OrderStatus
     let order: OrderWithCustomer
 
     var body: some View {
@@ -33,8 +33,17 @@ struct OrderDetails: View {
                     }
                     .padding(.top, Constants.defaultPadding)
 
-
-                    CustomSegmentView(selection: $ostatus, values: OrderStatus.allCases)
+                    VStack {
+                        HStack {
+                            Text("Change order status")
+                                .font(.custom(Constants.Fonts.semiBold, size: Constants.Fonts.smallBody))
+                                .foregroundColor(.wolfBlack)
+                            Spacer()
+                        }
+                        CustomSegmentView(selection: $orderStatus,
+                                          values: OrderStatus.allCases)
+                    }
+                    .padding(.top, Constants.largePadding)
                 }
                 .padding(.top, Constants.defaultPadding)
                 Spacer()
@@ -75,6 +84,6 @@ struct OrderDetails: View {
 // MARK: - Preview
 struct OrderDetails_Previews: PreviewProvider {
     static var previews: some View {
-        OrderDetails(order: OrderWithCustomer(id: 1, description: "Flower Power", price: 45, customer: Customer(id: 1, name: "Sumudica", latitude: 45.90, longitude: 23.90), imageURL: "https://firebasestorage.googleapis.com/v0/b/bookml.appspot.com/o/flower3.jpg?alt=media&token=b6abacc7-96bc-48a3-a7c4-b73c7bc25f7f", status: .pending))
+        OrderDetails(orderStatus: .constant(.new), order: OrderWithCustomer(id: 1, description: "Flower Power", price: 45, customer: Customer(id: 1, name: "Sumudica", latitude: 45.90, longitude: 23.90), imageURL: "https://firebasestorage.googleapis.com/v0/b/bookml.appspot.com/o/flower3.jpg?alt=media&token=b6abacc7-96bc-48a3-a7c4-b73c7bc25f7f", status: .pending))
     }
 }

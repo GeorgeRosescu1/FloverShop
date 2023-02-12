@@ -21,7 +21,7 @@ struct CustomSegmentView<T: Segmentable>: View {
                         RoundedRectangle(cornerRadius: 10)
                             .foregroundColor(selection == value ? .wolfPink : .wolfWhite)
                         Text(value.title)
-                            .font(.custom(Constants.Fonts.bold, size: Constants.Fonts.smallBody))
+                            .font(.custom(Constants.Fonts.bold, size: Constants.Fonts.caption))
                             .foregroundColor(selection == value ? .wolfWhite : .wolfBlack)
                     }
                 }
@@ -29,7 +29,6 @@ struct CustomSegmentView<T: Segmentable>: View {
         }
         .frame(maxWidth: .infinity)
         .frame(height: 40)
-        .padding(.top, Constants.largePadding)
     }
 }
 

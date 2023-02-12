@@ -15,6 +15,7 @@ extension HomeViewModel {
 
     enum Intent {
         case load
+        case changeOrderStatus(Int, OrderStatus)
     }
 }
 
@@ -32,6 +33,21 @@ final class HomeViewModel: ViewModel {
         switch intent {
         case .load:
             fetchData()
+        case .changeOrderStatus(let orderId, let status):
+            let newOrders = state.ordersWithCustomers.map {
+                if $0.id == orderId {
+                    return OrderWithCustomer(id: $0.id,
+                                             description: $0.description,
+                                             price: $0.price,
+                                             customer: $0.customer,
+                                             imageURL: $0.imageURL,
+                                             status: status)
+                } else {
+                    return $0
+                }
+            }
+
+            state.ordersWithCustomers = newOrders
         }
     }
 

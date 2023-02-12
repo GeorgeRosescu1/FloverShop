@@ -8,16 +8,23 @@
 import Foundation
 
 enum OrderStatus: String, Segmentable {
-    case new = "New"
-    case pending = "Pending"
-    case delivered = "Delivered"
+    case new
+    case pending
+    case delivered
 
     var id: String {
         self.rawValue
     }
 
     var title: String {
-        self.rawValue
+        switch self {
+        case .new:
+            return "New"
+        case .pending:
+            return "Pending"
+        case .delivered:
+            return "Delivered"
+        }
     }
 
     var description: String {
