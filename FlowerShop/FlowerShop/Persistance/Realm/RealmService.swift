@@ -10,29 +10,7 @@ import RealmSwift
 
 struct RealmService {
 
-    static func saveOrder(_ order: OrderRealmDTO) {
-        let realm: Realm = try! Realm()
-
-        try! realm.write {
-            realm.add(order, update: .modified)
-        }
-    }
-
-    static func saveOrders(_ orders: [OrderRealmDTO]) {
-        let realm: Realm = try! Realm()
-
-        try! realm.write {
-            realm.add(orders, update: .modified)
-        }
-    }
-
-    static func getAllOrders() -> [OrderRealmDTO] {
-        let realm: Realm = try! Realm()
-
-        return Array(realm.objects(OrderRealmDTO.self))
-    }
-
-    static func saveCustomer(_ object: CustomerRealmDTO) {
+    static func saveObject(_ object: some Object) {
         let realm: Realm = try! Realm()
 
         try! realm.write {
@@ -40,17 +18,17 @@ struct RealmService {
         }
     }
 
-    static func saveCustomers(_ customers: [CustomerRealmDTO]) {
+    static func saveObjects(_ objects: [some Object]) {
         let realm: Realm = try! Realm()
 
         try! realm.write {
-            realm.add(customers, update: .modified)
+            realm.add(objects, update: .modified)
         }
     }
 
-    static func getAllCustomers() -> [CustomerRealmDTO] {
+    static func getAllObjects<T: Object>() -> [T] {
         let realm: Realm = try! Realm()
 
-        return Array(realm.objects(CustomerRealmDTO.self))
+        return Array(realm.objects(T.self))
     }
 }

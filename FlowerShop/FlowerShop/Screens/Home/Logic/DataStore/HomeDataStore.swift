@@ -25,7 +25,7 @@ struct HomeDataStoreImpl: HomeDataStore {
 
     func fetchOrders() async throws -> [Order] {
         // Get orders from realm
-        let realmOrders = RealmService.getAllOrders()
+        let realmOrders: [OrderRealmDTO] = RealmService.getAllObjects()
 
         if !realmOrders.isEmpty {
             // if there are orders in the local DB pass them ahead
@@ -44,25 +44,25 @@ struct HomeDataStoreImpl: HomeDataStore {
                                      imageURL: order.imageURL,
                                      status: order.status.rawValue)
 
-        RealmService.saveOrder(orderDTO)
-        let realmOrders = RealmService.getAllOrders()
+        RealmService.saveObject(orderDTO)
+        let realmOrders: [OrderRealmDTO] = RealmService.getAllObjects()
 
         return realmOrders.compactMap { OrderRealmMapper.map(from: $0) }
     }
 
     func fetchCustomers() async throws -> [Customer] {
-        let realmCustomers = RealmService.getAllCustomers()
+        let realmCustomers: [CustomerRealmDTO] = RealmService.getAllObjects()
 
         if !realmCustomers.isEmpty {
             return realmCustomers.compactMap { CustomerRealmMapper.map(from: $0) }
         } else {
-           return try await refreshCustomers()
+            return try await refreshCustomers()
         }
     }
 
     func refreshOrders() async throws -> [Order] {
-        let orderDTOs: [OrderDTO] = try await ApiService.request("orders",
-                                                                 httpMethod: .get)
+        let networkConfig: OrderConfig = .getAllOrders
+        let orderDTOs: [OrderDTO] = try await ApiService.request(config: networkConfig)
 
         // Map api DTOs to Realm DTOs and save them locally
         let realmOrdersDTOs: [OrderRealmDTO] = orderDTOs.map {
@@ -74,15 +74,15 @@ struct HomeDataStoreImpl: HomeDataStore {
                           status: $0.status)
         }
 
-        RealmService.saveOrders(realmOrdersDTOs)
+        RealmService.saveObjects(realmOrdersDTOs)
 
         // return business model
         return orderDTOs.compactMap { OrderMapper.map(from: $0) }
     }
 
     func refreshCustomers() async throws -> [Customer] {
-        let customerDTOs: [CustomerDTO] = try await ApiService.request("customers",
-                                                                       httpMethod: .get)
+        let networkConfig: CustomerConfig = .getAllCustomers
+        let customerDTOs: [CustomerDTO] = try await ApiService.request(config: networkConfig)
 
         let realmCustomersDTOs: [CustomerRealmDTO] = customerDTOs.map {
             CustomerRealmDTO(id: $0.id,
@@ -91,7 +91,7 @@ struct HomeDataStoreImpl: HomeDataStore {
                              longitude: $0.longitude)
         }
 
-        RealmService.saveCustomers(realmCustomersDTOs)
+        RealmService.saveObjects(realmCustomersDTOs)
 
         return customerDTOs.compactMap { CustomerMapper.map(from: $0) }
     }
