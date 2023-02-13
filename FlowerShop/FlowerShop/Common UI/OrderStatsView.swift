@@ -25,7 +25,7 @@ struct OrderStatsView: View {
                     .frame(maxWidth: .infinity)
 
                 statView(deliveredNumber, for: "Delivered")
-                    .foregroundColor(.green)
+                    .foregroundColor(.wolfGreen)
                     .frame(maxWidth: .infinity)
             }
         }

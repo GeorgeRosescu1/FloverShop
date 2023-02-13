@@ -13,22 +13,26 @@ struct OurCustomersView: View {
 
     var body: some View {
         ZStack {
-            Color.wolfWhite.ignoresSafeArea()
+            DefaultBackground()
             VStack {
                 CustomNavigationBar(title: "Our customers")
                 Spacer()
                 ScrollView(showsIndicators: false) {
-                    VStack {
-                        ForEach(customers) { customer in
-                            CustomerCell(customer: customer, distanceText: viewModel.state.getDistance(for: customer))
-                        }
-                    }
+                    content
                 }
                 .padding(.top, Constants.defaultPadding)
             }
             .padding(.horizontal, Constants.defaultPadding)
         }
         .toolbar(.hidden, for: .navigationBar)
+    }
+
+    private var content: some View {
+        VStack {
+            ForEach(customers) { customer in
+                CustomerCell(customer: customer, distanceText: viewModel.state.getDistance(for: customer))
+            }
+        }
     }
 }
 

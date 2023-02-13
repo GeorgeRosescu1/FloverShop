@@ -12,9 +12,7 @@ enum OrderStatus: String, Segmentable {
     case pending
     case delivered
 
-    var id: String {
-        self.rawValue
-    }
+    var id: String { rawValue }
 
     var title: String {
         switch self {
@@ -41,8 +39,4 @@ enum OrderStatus: String, Segmentable {
     var isDelivered: Bool {
         self == .delivered
     }
-}
-
-protocol Segmentable: Identifiable, Equatable, CaseIterable {
-    var title: String { get }
 }

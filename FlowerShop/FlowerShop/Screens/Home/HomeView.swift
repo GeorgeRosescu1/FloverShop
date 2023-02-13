@@ -13,7 +13,7 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color.wolfWhite.ignoresSafeArea()
+                DefaultBackground()
                 ScrollView(showsIndicators: false) {
                     content
                         .padding(.horizontal, Constants.defaultPadding)

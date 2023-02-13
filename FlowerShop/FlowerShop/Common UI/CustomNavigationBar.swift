@@ -21,22 +21,19 @@ struct CustomNavigationBar: View {
                 dismiss.callAsFunction()
             } label: {
                 Image.back
-                    .font(.custom(Constants.Fonts.bold, size: Constants.Fonts.smallBody))
-                    .foregroundColor(.wolfBlack)
             }
             Spacer()
             if let title {
                 Text(title)
-                    .font(.custom(Constants.Fonts.bold, size: Constants.Fonts.smallBody))
-                    .foregroundColor(.wolfBlack)
             }
             Spacer()
         }
+        .font(.custom(Constants.Fonts.bold, size: Constants.Fonts.smallBody))
+        .foregroundColor(.wolfBlack)
     }
 }
 
 // MARK: - Preview
-
 struct CustomNavigationBar_Previews: PreviewProvider {
     static var previews: some View {
         CustomNavigationBar()

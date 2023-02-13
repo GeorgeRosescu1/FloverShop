@@ -16,7 +16,12 @@ final class OrderRealmDTO: Object {
     @Persisted var imageURL: String
     @Persisted var status: String
 
-    convenience init(id: Int, orderDescription: String, price: Int, customerId: Int, imageURL: String, status: String) {
+    convenience init(id: Int,
+                     orderDescription: String,
+                     price: Int,
+                     customerId: Int,
+                     imageURL: String,
+                     status: String) {
         self.init()
         
         self.id = id

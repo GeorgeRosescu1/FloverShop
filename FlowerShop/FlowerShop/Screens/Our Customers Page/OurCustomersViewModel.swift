@@ -10,13 +10,13 @@ import CoreLocation
 
 extension OurCustomersViewModel {
     struct State {
-        var location: CLLocation?
+        var myLocation: CLLocation?
 
         func getDistance(for customer: Customer) -> String {
-            if let location {
+            if let myLocation {
                 let customerLocation = CLLocation(latitude: customer.latitude,
                                                   longitude: customer.longitude)
-                let locationString = String(format: "%.2f", location.distance(from: customerLocation) / 1000)
+                let locationString = String(format: "%.2f", myLocation.distance(from: customerLocation) / 1000)
                 return "\(locationString) Km from you"
             } else {
                 return "No location available"
@@ -24,19 +24,17 @@ extension OurCustomersViewModel {
         }
     }
     
-    enum Intent {
-        case load
-    }
+    enum Intent { }
 }
 
 final class OurCustomersViewModel: NSObject, ViewModel, CLLocationManagerDelegate {
     @Published private(set) var state: State
 
+    // Location manager
     private let manager = CLLocationManager()
 
-
     override init() {
-        self.state = State(location: nil)
+        self.state = State(myLocation: nil)
         super.init()
         
         manager.delegate = self
@@ -45,15 +43,11 @@ final class OurCustomersViewModel: NSObject, ViewModel, CLLocationManagerDelegat
         manager.startUpdatingLocation()
     }
 
+    func intent(_ intent: Intent) { }
+
+    // MARK: - CLLocationManagerDelegate
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
-        state.location = location
-    }
-
-    func intent(_ intent: Intent) {
-        switch intent {
-        case .load:
-            print("a")
-        }
+        state.myLocation = location
     }
 }

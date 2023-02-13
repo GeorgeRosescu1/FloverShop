@@ -21,6 +21,17 @@ struct OrderCell: View {
                 Spacer()
                 KFImage(URL(string: order.imageURL))
                     .resizable()
+                    .placeholder({ progress in
+                        Gauge(value: progress.fractionCompleted) {
+                            Text("\(Int(progress.fractionCompleted * 100)) %")
+                                .font(.custom(Constants.Fonts.regular,
+                                              size: Constants.Fonts.caption))
+                                .foregroundColor(.wolfBlack)
+
+                        }
+                        .gaugeStyle(.accessoryCircularCapacity)
+                        .tint(.wolfPink)
+                    })
                     .scaledToFit()
                     .cornerRadius(Constants.defaultCornerRadius)
                     .padding(.trailing, Constants.smallPadding)

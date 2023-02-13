@@ -14,7 +14,7 @@ struct OrderDetails: View {
 
     var body: some View {
         ZStack {
-            Color.wolfWhite.ignoresSafeArea()
+            DefaultBackground()
             VStack {
                 CustomNavigationBar()
                 VStack(alignment: .leading) {
@@ -25,24 +25,12 @@ struct OrderDetails: View {
                         .frame(maxWidth: .infinity, maxHeight: 200, alignment: .center)
 
                     descriptionAndStatusStack
-                    VStack(alignment: .leading, spacing: Constants.smallPadding) {
-                        detailLabel(text: "Cost: \(order.price) RON",
-                                    imageSystemName: "bitcoinsign.circle")
-                        detailLabel(text: "Ordered by: \(order.customer.name)",
-                                    imageSystemName: "person.circle")
-                    }
-                    .padding(.top, Constants.defaultPadding)
+                    detailsStack
+                        .padding(.top, Constants.defaultPadding)
 
-                    VStack {
-                        HStack {
-                            Text("Change order status")
-                                .font(.custom(Constants.Fonts.semiBold, size: Constants.Fonts.smallBody))
-                                .foregroundColor(.wolfBlack)
-                            Spacer()
-                        }
-                        CustomSegmentView(selection: $orderStatus,
-                                          values: OrderStatus.allCases)
-                    }
+                    CustomSegmentView(selection: $orderStatus,
+                                      values: OrderStatus.allCases,
+                                      segmentTitle: "Change order status")
                     .padding(.top, Constants.largePadding)
                 }
                 .padding(.top, Constants.defaultPadding)
@@ -51,6 +39,16 @@ struct OrderDetails: View {
             .padding(.horizontal, Constants.defaultPadding)
         }
         .toolbar(.hidden, for: .navigationBar)
+    }
+
+    // MARK: - Details stack
+    private var detailsStack: some View {
+        VStack(alignment: .leading, spacing: Constants.smallPadding) {
+            detailLabel(text: "Cost: \(order.price) RON",
+                        imageSystemName: "bitcoinsign.circle")
+            detailLabel(text: "Ordered by: \(order.customer.name)",
+                        imageSystemName: "person.circle")
+        }
     }
 
     // MARK: - Description and status stack
