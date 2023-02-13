@@ -1,0 +1,98 @@
+//
+//  HomeDataStore.swift
+//  FlowerShop
+//
+//  Created by George Rosescu on 11.02.2023.
+//
+
+import Foundation
+
+protocol HomeDataStore {
+    /// Fetch orders from the convenient service
+    func fetchOrders() async throws -> [Order]
+    /// Fetch customers from the convenient service
+    func fetchCustomers() async throws -> [Customer]
+    /// Fetch orders only from API
+    func refreshOrders() async throws -> [Order]
+    /// Fetch customers only from API
+    func refreshCustomers() async throws -> [Customer]
+    /// Update the given order into Realm
+    /// - Returns: Updated list of orders
+    func updateOrder(order: Order) -> [Order]
+}
+
+struct HomeDataStoreImpl: HomeDataStore {
+
+    func fetchOrders() async throws -> [Order] {
+        // Get orders from realm
+        let realmOrders: [OrderRealmDTO] = RealmService.getAllObjects()
+
+        if !realmOrders.isEmpty {
+            // if there are orders in the local DB pass them ahead
+            return realmOrders.compactMap { OrderRealmMapper.map(from: $0) }
+        } else {
+            // if there are no orders in local DB fetch them from API
+            return try await refreshOrders()
+        }
+    }
+
+    func updateOrder(order: Order) -> [Order] {
+        let orderDTO = OrderRealmDTO(id: order.id,
+                                     orderDescription: order.description,
+                                     price: order.price,
+                                     customerId: order.customerId,
+                                     imageURL: order.imageURL,
+                                     status: order.status.rawValue)
+
+        RealmService.saveObject(orderDTO)
+        let realmOrders: [OrderRealmDTO] = RealmService.getAllObjects()
+
+        return realmOrders.compactMap { OrderRealmMapper.map(from: $0) }
+    }
+
+    func fetchCustomers() async throws -> [Customer] {
+        let realmCustomers: [CustomerRealmDTO] = RealmService.getAllObjects()
+
+        if !realmCustomers.isEmpty {
+            return realmCustomers.compactMap { CustomerRealmMapper.map(from: $0) }
+        } else {
+            return try await refreshCustomers()
+        }
+    }
+
+    func refreshOrders() async throws -> [Order] {
+        let networkConfig: OrderConfig = .getAllOrders
+        let orderDTOs: [OrderDTO] = try await ApiService.request(config: networkConfig)
+
+        // Map api DTOs to Realm DTOs and save them locally
+        let realmOrdersDTOs: [OrderRealmDTO] = orderDTOs.map {
+            OrderRealmDTO(id: $0.id,
+                          orderDescription: $0.description,
+                          price: $0.price,
+                          customerId: $0.customerId,
+                          imageURL: $0.imageURL,
+                          status: $0.status)
+        }
+
+        RealmService.saveObjects(realmOrdersDTOs)
+
+        // return business model
+        return orderDTOs.compactMap { OrderMapper.map(from: $0) }
+    }
+
+    func refreshCustomers() async throws -> [Customer] {
+        let networkConfig: CustomerConfig = .getAllCustomers
+        let customerDTOs: [CustomerDTO] = try await ApiService.request(config: networkConfig)
+
+        let realmCustomersDTOs: [CustomerRealmDTO] = customerDTOs.map {
+            CustomerRealmDTO(id: $0.id,
+                             name: $0.name,
+                             latitude: $0.latitude,
+                             longitude: $0.longitude)
+        }
+
+        RealmService.saveObjects(realmCustomersDTOs)
+
+        return customerDTOs.compactMap { CustomerMapper.map(from: $0) }
+    }
+}

@@ -7,18 +7,100 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F02502BC2998D70300B3BA68 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02502BB2998D70300B3BA68 /* CustomNavigationBar.swift */; };
+		F02502BE2998E55F00B3BA68 /* CustomSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02502BD2998E55F00B3BA68 /* CustomSegmentView.swift */; };
+		F02502C12998EE9000B3BA68 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = F02502C02998EE9000B3BA68 /* Realm */; };
+		F02502C32998EE9000B3BA68 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F02502C22998EE9000B3BA68 /* RealmSwift */; };
+		F02502C72998EF1D00B3BA68 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02502C62998EF1D00B3BA68 /* RealmService.swift */; };
+		F02502CA2998EF9D00B3BA68 /* OrderRealmDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02502C92998EF9D00B3BA68 /* OrderRealmDTO.swift */; };
+		F02502CC2998F14100B3BA68 /* CustomerRealmDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02502CB2998F14100B3BA68 /* CustomerRealmDTO.swift */; };
+		F02502CF2998F44400B3BA68 /* OrderRealmMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02502CE2998F44400B3BA68 /* OrderRealmMapper.swift */; };
+		F02502D12998F46A00B3BA68 /* CustomerRealmMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02502D02998F46A00B3BA68 /* CustomerRealmMapper.swift */; };
+		F02502D42999334400B3BA68 /* OrderStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02502D32999334400B3BA68 /* OrderStatsView.swift */; };
+		F0F43327299A0C750093AF5F /* DefaultBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F43326299A0C750093AF5F /* DefaultBackground.swift */; };
+		F0F4332A299A107F0093AF5F /* Segmentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F43329299A107F0093AF5F /* Segmentable.swift */; };
+		F0F4332C299A18770093AF5F /* NetworkingConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F4332B299A18770093AF5F /* NetworkingConfig.swift */; };
+		F0F4332F299A191A0093AF5F /* OrderConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F4332E299A191A0093AF5F /* OrderConfig.swift */; };
+		F0F43331299A1A0F0093AF5F /* CustomerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F43330299A1A0F0093AF5F /* CustomerConfig.swift */; };
 		F0FAD3852997908B006B05F9 /* FlowerShopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3842997908B006B05F9 /* FlowerShopApp.swift */; };
-		F0FAD3872997908B006B05F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3862997908B006B05F9 /* ContentView.swift */; };
+		F0FAD3872997908B006B05F9 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3862997908B006B05F9 /* HomeView.swift */; };
 		F0FAD3892997908D006B05F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0FAD3882997908D006B05F9 /* Assets.xcassets */; };
 		F0FAD38C2997908D006B05F9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0FAD38B2997908D006B05F9 /* Preview Assets.xcassets */; };
+		F0FAD39429979427006B05F9 /* Color+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD39329979427006B05F9 /* Color+Utils.swift */; };
+		F0FAD3972997961F006B05F9 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0FAD3962997961F006B05F9 /* Poppins-Bold.ttf */; };
+		F0FAD39929979630006B05F9 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0FAD3982997962F006B05F9 /* Poppins-SemiBold.ttf */; };
+		F0FAD39B29979648006B05F9 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0FAD39A29979648006B05F9 /* Poppins-Regular.ttf */; };
+		F0FAD39F29979EE8006B05F9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD39E29979EE8006B05F9 /* Constants.swift */; };
+		F0FAD3A42997A037006B05F9 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3A32997A037006B05F9 /* Order.swift */; };
+		F0FAD3A72997A234006B05F9 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3A62997A234006B05F9 /* OrderCell.swift */; };
+		F0FAD3AA2997A340006B05F9 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3A92997A340006B05F9 /* HomeViewModel.swift */; };
+		F0FAD3AD2997A359006B05F9 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3AC2997A359006B05F9 /* ViewModel.swift */; };
+		F0FAD3B02997A4AC006B05F9 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3AF2997A4AC006B05F9 /* ApiService.swift */; };
+		F0FAD3B32997A4EA006B05F9 /* HomeDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3B22997A4EA006B05F9 /* HomeDataStore.swift */; };
+		F0FAD3B62997A6C7006B05F9 /* OrderDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3B52997A6C7006B05F9 /* OrderDTO.swift */; };
+		F0FAD3B82997AC41006B05F9 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3B72997AC41006B05F9 /* Mapper.swift */; };
+		F0FAD3BA2997AD15006B05F9 /* OrderMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3B92997AD15006B05F9 /* OrderMapper.swift */; };
+		F0FAD3C22997B5E7006B05F9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F0FAD3C12997B5E7006B05F9 /* Kingfisher */; };
+		F0FAD3C52997D7FA006B05F9 /* OurCustomersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3C42997D7FA006B05F9 /* OurCustomersView.swift */; };
+		F0FAD3C72997DA18006B05F9 /* OurCustomersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3C62997DA18006B05F9 /* OurCustomersViewModel.swift */; };
+		F0FAD3C92997DA7B006B05F9 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3C82997DA7B006B05F9 /* Customer.swift */; };
+		F0FAD3CB2997DB06006B05F9 /* CustomerDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3CA2997DB06006B05F9 /* CustomerDTO.swift */; };
+		F0FAD3D02997DE8F006B05F9 /* CustomerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3CF2997DE8F006B05F9 /* CustomerCell.swift */; };
+		F0FAD3D22997E1B4006B05F9 /* Array+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3D12997E1B4006B05F9 /* Array+Utils.swift */; };
+		F0FAD3D42997E2C4006B05F9 /* CustomerMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3D32997E2C4006B05F9 /* CustomerMapper.swift */; };
+		F0FAD3D62997E546006B05F9 /* UINavigationController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3D52997E546006B05F9 /* UINavigationController+Utils.swift */; };
+		F0FAD3D92997E81E006B05F9 /* OrderWithCustomer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3D82997E81E006B05F9 /* OrderWithCustomer.swift */; };
+		F0FAD3DB2997E847006B05F9 /* OrderStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3DA2997E847006B05F9 /* OrderStatus.swift */; };
+		F0FAD3DD2998012A006B05F9 /* Image+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3DC2998012A006B05F9 /* Image+Utils.swift */; };
+		F0FAD3DF299801B6006B05F9 /* OrderDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FAD3DE299801B6006B05F9 /* OrderDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F02502BB2998D70300B3BA68 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
+		F02502BD2998E55F00B3BA68 /* CustomSegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentView.swift; sourceTree = "<group>"; };
+		F02502C62998EF1D00B3BA68 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
+		F02502C92998EF9D00B3BA68 /* OrderRealmDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRealmDTO.swift; sourceTree = "<group>"; };
+		F02502CB2998F14100B3BA68 /* CustomerRealmDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerRealmDTO.swift; sourceTree = "<group>"; };
+		F02502CE2998F44400B3BA68 /* OrderRealmMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderRealmMapper.swift; sourceTree = "<group>"; };
+		F02502D02998F46A00B3BA68 /* CustomerRealmMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerRealmMapper.swift; sourceTree = "<group>"; };
+		F02502D32999334400B3BA68 /* OrderStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatsView.swift; sourceTree = "<group>"; };
+		F0F43326299A0C750093AF5F /* DefaultBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultBackground.swift; sourceTree = "<group>"; };
+		F0F43329299A107F0093AF5F /* Segmentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segmentable.swift; sourceTree = "<group>"; };
+		F0F4332B299A18770093AF5F /* NetworkingConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingConfig.swift; sourceTree = "<group>"; };
+		F0F4332E299A191A0093AF5F /* OrderConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfig.swift; sourceTree = "<group>"; };
+		F0F43330299A1A0F0093AF5F /* CustomerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerConfig.swift; sourceTree = "<group>"; };
 		F0FAD3812997908B006B05F9 /* FlowerShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowerShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0FAD3842997908B006B05F9 /* FlowerShopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowerShopApp.swift; sourceTree = "<group>"; };
-		F0FAD3862997908B006B05F9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F0FAD3862997908B006B05F9 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F0FAD3882997908D006B05F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F0FAD38B2997908D006B05F9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F0FAD39329979427006B05F9 /* Color+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Utils.swift"; sourceTree = "<group>"; };
+		F0FAD3962997961F006B05F9 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		F0FAD3982997962F006B05F9 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		F0FAD39A29979648006B05F9 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		F0FAD39C299796C9006B05F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F0FAD39E29979EE8006B05F9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F0FAD3A32997A037006B05F9 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		F0FAD3A62997A234006B05F9 /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
+		F0FAD3A92997A340006B05F9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F0FAD3AC2997A359006B05F9 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		F0FAD3AF2997A4AC006B05F9 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		F0FAD3B22997A4EA006B05F9 /* HomeDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataStore.swift; sourceTree = "<group>"; };
+		F0FAD3B52997A6C7006B05F9 /* OrderDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDTO.swift; sourceTree = "<group>"; };
+		F0FAD3B72997AC41006B05F9 /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
+		F0FAD3B92997AD15006B05F9 /* OrderMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderMapper.swift; sourceTree = "<group>"; };
+		F0FAD3C42997D7FA006B05F9 /* OurCustomersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OurCustomersView.swift; sourceTree = "<group>"; };
+		F0FAD3C62997DA18006B05F9 /* OurCustomersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OurCustomersViewModel.swift; sourceTree = "<group>"; };
+		F0FAD3C82997DA7B006B05F9 /* Customer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
+		F0FAD3CA2997DB06006B05F9 /* CustomerDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerDTO.swift; sourceTree = "<group>"; };
+		F0FAD3CF2997DE8F006B05F9 /* CustomerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerCell.swift; sourceTree = "<group>"; };
+		F0FAD3D12997E1B4006B05F9 /* Array+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Utils.swift"; sourceTree = "<group>"; };
+		F0FAD3D32997E2C4006B05F9 /* CustomerMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerMapper.swift; sourceTree = "<group>"; };
+		F0FAD3D52997E546006B05F9 /* UINavigationController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Utils.swift"; sourceTree = "<group>"; };
+		F0FAD3D82997E81E006B05F9 /* OrderWithCustomer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderWithCustomer.swift; sourceTree = "<group>"; };
+		F0FAD3DA2997E847006B05F9 /* OrderStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatus.swift; sourceTree = "<group>"; };
+		F0FAD3DC2998012A006B05F9 /* Image+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Utils.swift"; sourceTree = "<group>"; };
+		F0FAD3DE299801B6006B05F9 /* OrderDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,12 +108,85 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F02502C32998EE9000B3BA68 /* RealmSwift in Frameworks */,
+				F02502C12998EE9000B3BA68 /* Realm in Frameworks */,
+				F0FAD3C22997B5E7006B05F9 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F02502BA2998D6EF00B3BA68 /* Common UI */ = {
+			isa = PBXGroup;
+			children = (
+				F02502BB2998D70300B3BA68 /* CustomNavigationBar.swift */,
+				F02502BD2998E55F00B3BA68 /* CustomSegmentView.swift */,
+				F02502D32999334400B3BA68 /* OrderStatsView.swift */,
+				F0F43326299A0C750093AF5F /* DefaultBackground.swift */,
+			);
+			path = "Common UI";
+			sourceTree = "<group>";
+		};
+		F02502C42998EEC800B3BA68 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				F0F4332D299A18FF0093AF5F /* Network Configs */,
+				F0FAD3BC2997ADF1006B05F9 /* Mappings */,
+				F0FAD3B42997A6BA006B05F9 /* DTOs */,
+				F0FAD3AF2997A4AC006B05F9 /* ApiService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		F02502C52998EF0F00B3BA68 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				F02502CD2998F41300B3BA68 /* Mappings */,
+				F02502C82998EF8B00B3BA68 /* DTOs */,
+				F02502C62998EF1D00B3BA68 /* RealmService.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		F02502C82998EF8B00B3BA68 /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				F02502C92998EF9D00B3BA68 /* OrderRealmDTO.swift */,
+				F02502CB2998F14100B3BA68 /* CustomerRealmDTO.swift */,
+			);
+			path = DTOs;
+			sourceTree = "<group>";
+		};
+		F02502CD2998F41300B3BA68 /* Mappings */ = {
+			isa = PBXGroup;
+			children = (
+				F02502CE2998F44400B3BA68 /* OrderRealmMapper.swift */,
+				F02502D02998F46A00B3BA68 /* CustomerRealmMapper.swift */,
+			);
+			path = Mappings;
+			sourceTree = "<group>";
+		};
+		F0F43328299A106E0093AF5F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F0FAD3AC2997A359006B05F9 /* ViewModel.swift */,
+				F0FAD3B72997AC41006B05F9 /* Mapper.swift */,
+				F0F43329299A107F0093AF5F /* Segmentable.swift */,
+				F0F4332B299A18770093AF5F /* NetworkingConfig.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		F0F4332D299A18FF0093AF5F /* Network Configs */ = {
+			isa = PBXGroup;
+			children = (
+				F0F4332E299A191A0093AF5F /* OrderConfig.swift */,
+				F0F43330299A1A0F0093AF5F /* CustomerConfig.swift */,
+			);
+			path = "Network Configs";
+			sourceTree = "<group>";
+		};
 		F0FAD3782997908B006B05F9 = {
 			isa = PBXGroup;
 			children = (
@@ -51,8 +206,15 @@
 		F0FAD3832997908B006B05F9 /* FlowerShop */ = {
 			isa = PBXGroup;
 			children = (
+				F0FAD39C299796C9006B05F9 /* Info.plist */,
 				F0FAD3842997908B006B05F9 /* FlowerShopApp.swift */,
-				F0FAD3862997908B006B05F9 /* ContentView.swift */,
+				F0FAD3A029979FC0006B05F9 /* Screens */,
+				F0FAD3AB2997A34D006B05F9 /* Common Logic */,
+				F02502BA2998D6EF00B3BA68 /* Common UI */,
+				F0FAD3A22997A02C006B05F9 /* Models */,
+				F0FAD3AE2997A477006B05F9 /* Persistance */,
+				F0FAD39529979606006B05F9 /* Resource */,
+				F0FAD3922997937F006B05F9 /* Utils */,
 				F0FAD3882997908D006B05F9 /* Assets.xcassets */,
 				F0FAD38A2997908D006B05F9 /* Preview Content */,
 			);
@@ -65,6 +227,169 @@
 				F0FAD38B2997908D006B05F9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F0FAD3922997937F006B05F9 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F0FAD39D29979EDD006B05F9 /* Extensions */,
+				F0FAD39E29979EE8006B05F9 /* Constants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		F0FAD39529979606006B05F9 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				F0FAD39A29979648006B05F9 /* Poppins-Regular.ttf */,
+				F0FAD3982997962F006B05F9 /* Poppins-SemiBold.ttf */,
+				F0FAD3962997961F006B05F9 /* Poppins-Bold.ttf */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		F0FAD39D29979EDD006B05F9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F0FAD39329979427006B05F9 /* Color+Utils.swift */,
+				F0FAD3D12997E1B4006B05F9 /* Array+Utils.swift */,
+				F0FAD3D52997E546006B05F9 /* UINavigationController+Utils.swift */,
+				F0FAD3DC2998012A006B05F9 /* Image+Utils.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F0FAD3A029979FC0006B05F9 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				F0FAD3E0299801B9006B05F9 /* Order Details */,
+				F0FAD3C32997D7E8006B05F9 /* Our Customers Page */,
+				F0FAD3A129979FD7006B05F9 /* Home */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		F0FAD3A129979FD7006B05F9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F0FAD3B12997A4D2006B05F9 /* Logic */,
+				F0FAD3A52997A223006B05F9 /* UI Components */,
+				F0FAD3862997908B006B05F9 /* HomeView.swift */,
+				F0FAD3A92997A340006B05F9 /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F0FAD3A22997A02C006B05F9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F0FAD3A32997A037006B05F9 /* Order.swift */,
+				F0FAD3C82997DA7B006B05F9 /* Customer.swift */,
+				F0FAD3DA2997E847006B05F9 /* OrderStatus.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F0FAD3A52997A223006B05F9 /* UI Components */ = {
+			isa = PBXGroup;
+			children = (
+				F0FAD3A62997A234006B05F9 /* OrderCell.swift */,
+			);
+			path = "UI Components";
+			sourceTree = "<group>";
+		};
+		F0FAD3AB2997A34D006B05F9 /* Common Logic */ = {
+			isa = PBXGroup;
+			children = (
+				F0F43328299A106E0093AF5F /* Protocols */,
+			);
+			path = "Common Logic";
+			sourceTree = "<group>";
+		};
+		F0FAD3AE2997A477006B05F9 /* Persistance */ = {
+			isa = PBXGroup;
+			children = (
+				F02502C52998EF0F00B3BA68 /* Realm */,
+				F02502C42998EEC800B3BA68 /* Networking */,
+			);
+			path = Persistance;
+			sourceTree = "<group>";
+		};
+		F0FAD3B12997A4D2006B05F9 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				F0FAD3D72997E815006B05F9 /* Models */,
+				F0FAD3BB2997ADEB006B05F9 /* DataStore */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		F0FAD3B42997A6BA006B05F9 /* DTOs */ = {
+			isa = PBXGroup;
+			children = (
+				F0FAD3B52997A6C7006B05F9 /* OrderDTO.swift */,
+				F0FAD3CA2997DB06006B05F9 /* CustomerDTO.swift */,
+			);
+			path = DTOs;
+			sourceTree = "<group>";
+		};
+		F0FAD3BB2997ADEB006B05F9 /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+				F0FAD3B22997A4EA006B05F9 /* HomeDataStore.swift */,
+			);
+			path = DataStore;
+			sourceTree = "<group>";
+		};
+		F0FAD3BC2997ADF1006B05F9 /* Mappings */ = {
+			isa = PBXGroup;
+			children = (
+				F0FAD3B92997AD15006B05F9 /* OrderMapper.swift */,
+				F0FAD3D32997E2C4006B05F9 /* CustomerMapper.swift */,
+			);
+			path = Mappings;
+			sourceTree = "<group>";
+		};
+		F0FAD3C32997D7E8006B05F9 /* Our Customers Page */ = {
+			isa = PBXGroup;
+			children = (
+				F0FAD3CC2997DB42006B05F9 /* Logic */,
+				F0FAD3CE2997DE6E006B05F9 /* UI Components */,
+				F0FAD3C42997D7FA006B05F9 /* OurCustomersView.swift */,
+				F0FAD3C62997DA18006B05F9 /* OurCustomersViewModel.swift */,
+			);
+			path = "Our Customers Page";
+			sourceTree = "<group>";
+		};
+		F0FAD3CC2997DB42006B05F9 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		F0FAD3CE2997DE6E006B05F9 /* UI Components */ = {
+			isa = PBXGroup;
+			children = (
+				F0FAD3CF2997DE8F006B05F9 /* CustomerCell.swift */,
+			);
+			path = "UI Components";
+			sourceTree = "<group>";
+		};
+		F0FAD3D72997E815006B05F9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F0FAD3D82997E81E006B05F9 /* OrderWithCustomer.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F0FAD3E0299801B9006B05F9 /* Order Details */ = {
+			isa = PBXGroup;
+			children = (
+				F0FAD3DE299801B6006B05F9 /* OrderDetails.swift */,
+			);
+			path = "Order Details";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +408,11 @@
 			dependencies = (
 			);
 			name = FlowerShop;
+			packageProductDependencies = (
+				F0FAD3C12997B5E7006B05F9 /* Kingfisher */,
+				F02502C02998EE9000B3BA68 /* Realm */,
+				F02502C22998EE9000B3BA68 /* RealmSwift */,
+			);
 			productName = FlowerShop;
 			productReference = F0FAD3812997908B006B05F9 /* FlowerShop.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +441,10 @@
 				Base,
 			);
 			mainGroup = F0FAD3782997908B006B05F9;
+			packageReferences = (
+				F0FAD3C02997B5E7006B05F9 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				F02502BF2998EE9000B3BA68 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = F0FAD3822997908B006B05F9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,7 +460,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0FAD38C2997908D006B05F9 /* Preview Assets.xcassets in Resources */,
+				F0FAD39929979630006B05F9 /* Poppins-SemiBold.ttf in Resources */,
+				F0FAD3972997961F006B05F9 /* Poppins-Bold.ttf in Resources */,
 				F0FAD3892997908D006B05F9 /* Assets.xcassets in Resources */,
+				F0FAD39B29979648006B05F9 /* Poppins-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +474,44 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0FAD3872997908B006B05F9 /* ContentView.swift in Sources */,
+				F0FAD3872997908B006B05F9 /* HomeView.swift in Sources */,
+				F0FAD3BA2997AD15006B05F9 /* OrderMapper.swift in Sources */,
+				F0FAD3DD2998012A006B05F9 /* Image+Utils.swift in Sources */,
+				F0F43331299A1A0F0093AF5F /* CustomerConfig.swift in Sources */,
+				F02502CF2998F44400B3BA68 /* OrderRealmMapper.swift in Sources */,
+				F02502BC2998D70300B3BA68 /* CustomNavigationBar.swift in Sources */,
+				F0FAD3D42997E2C4006B05F9 /* CustomerMapper.swift in Sources */,
 				F0FAD3852997908B006B05F9 /* FlowerShopApp.swift in Sources */,
+				F0F43327299A0C750093AF5F /* DefaultBackground.swift in Sources */,
+				F0FAD3AA2997A340006B05F9 /* HomeViewModel.swift in Sources */,
+				F0FAD3A42997A037006B05F9 /* Order.swift in Sources */,
+				F0FAD3B82997AC41006B05F9 /* Mapper.swift in Sources */,
+				F0FAD3D62997E546006B05F9 /* UINavigationController+Utils.swift in Sources */,
+				F0FAD39429979427006B05F9 /* Color+Utils.swift in Sources */,
+				F02502CA2998EF9D00B3BA68 /* OrderRealmDTO.swift in Sources */,
+				F0FAD3B02997A4AC006B05F9 /* ApiService.swift in Sources */,
+				F0FAD3A72997A234006B05F9 /* OrderCell.swift in Sources */,
+				F0FAD3DB2997E847006B05F9 /* OrderStatus.swift in Sources */,
+				F0FAD3AD2997A359006B05F9 /* ViewModel.swift in Sources */,
+				F02502CC2998F14100B3BA68 /* CustomerRealmDTO.swift in Sources */,
+				F0FAD3C92997DA7B006B05F9 /* Customer.swift in Sources */,
+				F02502D12998F46A00B3BA68 /* CustomerRealmMapper.swift in Sources */,
+				F0FAD3B32997A4EA006B05F9 /* HomeDataStore.swift in Sources */,
+				F0FAD3D02997DE8F006B05F9 /* CustomerCell.swift in Sources */,
+				F0F4332C299A18770093AF5F /* NetworkingConfig.swift in Sources */,
+				F0FAD3B62997A6C7006B05F9 /* OrderDTO.swift in Sources */,
+				F0FAD3C72997DA18006B05F9 /* OurCustomersViewModel.swift in Sources */,
+				F0F4332F299A191A0093AF5F /* OrderConfig.swift in Sources */,
+				F0FAD3CB2997DB06006B05F9 /* CustomerDTO.swift in Sources */,
+				F0FAD3DF299801B6006B05F9 /* OrderDetails.swift in Sources */,
+				F02502C72998EF1D00B3BA68 /* RealmService.swift in Sources */,
+				F0FAD3C52997D7FA006B05F9 /* OurCustomersView.swift in Sources */,
+				F0FAD3D92997E81E006B05F9 /* OrderWithCustomer.swift in Sources */,
+				F0FAD39F29979EE8006B05F9 /* Constants.swift in Sources */,
+				F02502D42999334400B3BA68 /* OrderStatsView.swift in Sources */,
+				F0FAD3D22997E1B4006B05F9 /* Array+Utils.swift in Sources */,
+				F0F4332A299A107F0093AF5F /* Segmentable.swift in Sources */,
+				F02502BE2998E55F00B3BA68 /* CustomSegmentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,11 +643,13 @@
 				DEVELOPMENT_TEAM = T4W9YQ844A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FlowerShop/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Flower shop are nevoie de locatia ta pentru a-ti arata clientii care sunt aproape de tine";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -282,9 +657,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.georgerosescu.FlowerShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -299,11 +677,13 @@
 				DEVELOPMENT_TEAM = T4W9YQ844A;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FlowerShop/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Flower shop are nevoie de locatia ta pentru a-ti arata clientii care sunt aproape de tine";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -311,9 +691,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.georgerosescu.FlowerShop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -339,6 +722,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F02502BF2998EE9000B3BA68 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		F0FAD3C02997B5E7006B05F9 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F02502C02998EE9000B3BA68 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F02502BF2998EE9000B3BA68 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		F02502C22998EE9000B3BA68 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F02502BF2998EE9000B3BA68 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		F0FAD3C12997B5E7006B05F9 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F0FAD3C02997B5E7006B05F9 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F0FAD3792997908B006B05F9 /* Project object */;
 }
